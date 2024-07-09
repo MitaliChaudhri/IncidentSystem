@@ -1,8 +1,13 @@
 using {COS as my} from '../db/schema';
- using CV_EMPLOYEEDETAILS from '../db/schema';
+using CV_EMPLOYEEDETAILS from '../db/schema';
 
 service HealthSafety @(_requires: 'h&s') {
 
+    @cds.redirection.target
+    @readonly
+    entity drafts          as projection on my.Incident
+                              where
+                                  isdraft = '1';
 
     entity Incident        as projection on my.Incident
                               where
