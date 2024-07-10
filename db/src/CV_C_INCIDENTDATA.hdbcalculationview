@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_C_INCIDENTDATA" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_C_INCIDENTDATA"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="COS_INCIDENT">
+    <resourceUri>COS_INCIDENT</resourceUri>
+  </DataSource>
+  <DataSource id="COS_INCMASTERDATA">
+    <resourceUri>COS_INCMASTERDATA</resourceUri>
+  </DataSource>
+  <DataSource id="INC_M2$$$$COS_INCMASTERDATA$$">
+    <resourceUri>COS_INCMASTERDATA</resourceUri>
+  </DataSource>
+  <DataSource id="Projection_2_copy_copy$$$$COS_INCMASTERDATA$$">
+    <resourceUri>COS_INCMASTERDATA</resourceUri>
+  </DataSource>
+  <DataSource id="Projection_2_copy_copy_copy$$$$COS_INCMASTERDATA$$">
+    <resourceUri>COS_INCMASTERDATA</resourceUri>
+  </DataSource>
+  <DataSource id="Projection_2_copy_copy_copy_copy$$$$COS_INCMASTERDATA$$">
+    <resourceUri>COS_INCMASTERDATA</resourceUri>
+  </DataSource>
+  <DataSource id="Projection_2_copy_copy_copy_copy_copy$$$$COS_INCMASTERDATA$$">
+    <resourceUri>COS_INCMASTERDATA</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="INC_T_DATA">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="INCNO"/>
+      <viewAttribute id="INCTYPE"/>
+      <viewAttribute id="INCID"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="EMPNAME"/>
+      <viewAttribute id="EMPID"/>
+      <viewAttribute id="EMPPOS"/>
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DEPT"/>
+      <viewAttribute id="SECTION"/>
+      <viewAttribute id="INCDATE"/>
+      <viewAttribute id="INCTIME"/>
+      <viewAttribute id="INCDATEREP"/>
+      <viewAttribute id="INCTIMEREP"/>
+      <viewAttribute id="SUPID"/>
+      <viewAttribute id="SUPNAME"/>
+      <viewAttribute id="YEAREXPPOS"/>
+      <viewAttribute id="WASINCONCOSLOC"/>
+      <viewAttribute id="SHIFT"/>
+      <viewAttribute id="LATITUDE"/>
+      <viewAttribute id="LONGITUDE"/>
+      <viewAttribute id="WASCOSVEHUSED"/>
+      <viewAttribute id="ADDMENTALHEALTH"/>
+      <viewAttribute id="BUSNO"/>
+      <viewAttribute id="NONCOSVEHINVOL"/>
+      <viewAttribute id="POLICEREPORTNO"/>
+      <viewAttribute id="INCCATEGORY"/>
+      <viewAttribute id="EVENTTYPE"/>
+      <viewAttribute id="ACTINCSEVERITY"/>
+      <viewAttribute id="POTSEVERITY"/>
+      <viewAttribute id="ISINVESTREQ"/>
+      <viewAttribute id="OTHERPEOPINV"/>
+      <viewAttribute id="INCDESC"/>
+      <viewAttribute id="ISDRAFT"/>
+      <viewAttribute id="SENTTOEMP"/>
+      <viewAttribute id="FINALRTW"/>
+      <viewAttribute id="WORKLOCATION"/>
+      <viewAttribute id="INCSTATUS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="COS_INCIDENT"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="INC_M1" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MID"/>
+      <viewAttribute id="TEXT"/></viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MIDCONVERTED" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>TO_NVARCHAR(&quot;MID&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="COS_INCMASTERDATA"/>
+    <filter>TO_NCHAR(&quot;MID&quot;)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="INC_M2" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MID"/>
+      <viewAttribute id="TEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MIDCONVERTED" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>TO_NVARCHAR(&quot;MID&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="INC_M2$$$$COS_INCMASTERDATA$$"/>
+    <filter>TO_NCHAR(&quot;MID&quot;)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2_copy_copy" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MID"/>
+      <viewAttribute id="TEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MIDCONVERTED" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>TO_NVARCHAR(&quot;MID&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_2_copy_copy$$$$COS_INCMASTERDATA$$"/>
+    <filter>TO_NCHAR(&quot;MID&quot;)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2_copy_copy_copy" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MID"/>
+      <viewAttribute id="TEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MIDCONVERTED" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>TO_NVARCHAR(&quot;MID&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_2_copy_copy_copy$$$$COS_INCMASTERDATA$$"/>
+    <filter>TO_NCHAR(&quot;MID&quot;)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2_copy_copy_copy_copy" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MID"/>
+      <viewAttribute id="TEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MIDCONVERTED" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>TO_NVARCHAR(&quot;MID&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_2_copy_copy_copy_copy$$$$COS_INCMASTERDATA$$"/>
+    <filter>TO_NCHAR(&quot;MID&quot;)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2_copy_copy_copy_copy_copy" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="MID"/>
+      <viewAttribute id="TEXT"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="MIDCONVERTED" datatype="NVARCHAR" length="50" expressionLanguage="SQL">
+        <formula>TO_NVARCHAR(&quot;MID&quot;)</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_2_copy_copy_copy_copy_copy$$$$COS_INCMASTERDATA$$"/>
+    <filter>TO_NCHAR(&quot;MID&quot;)</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_1" joinType="leftOuter" ignoreMultipleOutputsForFilter="false">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="INCNO"/>
+      <viewAttribute id="INCTYPE"/>
+      <viewAttribute id="INCID" aggregationType="sum"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="EMPNAME"/>
+      <viewAttribute id="EMPID"/>
+      <viewAttribute id="EMPPOS"/>
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DEPT"/>
+      <viewAttribute id="SECTION"/>
+      <viewAttribute id="INCDATE"/>
+      <viewAttribute id="INCTIME" aggregationType="min"/>
+      <viewAttribute id="INCDATEREP"/>
+      <viewAttribute id="INCTIMEREP" aggregationType="min"/>
+      <viewAttribute id="SUPID"/>
+      <viewAttribute id="SUPNAME"/>
+      <viewAttribute id="YEAREXPPOS" aggregationType="sum"/>
+      <viewAttribute id="WASINCONCOSLOC"/>
+      <viewAttribute id="SHIFT"/>
+      <viewAttribute id="LATITUDE"/>
+      <viewAttribute id="LONGITUDE"/>
+      <viewAttribute id="WASCOSVEHUSED"/>
+      <viewAttribute id="ADDMENTALHEALTH"/>
+      <viewAttribute id="BUSNO"/>
+      <viewAttribute id="NONCOSVEHINVOL"/>
+      <viewAttribute id="POLICEREPORTNO"/>
+      <viewAttribute id="INCCATEGORY"/>
+      <viewAttribute id="EVENTTYPE"/>
+      <viewAttribute id="ACTINCSEVERITY"/>
+      <viewAttribute id="POTSEVERITY"/>
+      <viewAttribute id="ISINVESTREQ"/>
+      <viewAttribute id="OTHERPEOPINV"/>
+      <viewAttribute id="INCDESC"/>
+      <viewAttribute id="ISDRAFT"/>
+      <viewAttribute id="SENTTOEMP"/>
+      <viewAttribute id="FINALRTW"/>
+      <viewAttribute id="WORKLOCATION"/>
+      <viewAttribute id="INCSTATUS"/>
+      <viewAttribute hidden="true" id="JOIN$INCTYPE$MIDCONVERTED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="INC_T_DATA">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCNO" source="INCNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCID" source="INCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPNAME" source="EMPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPID" source="EMPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPPOS" source="EMPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIVISION" source="DIVISION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SECTION" source="SECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATE" source="INCDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIME" source="INCTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATEREP" source="INCDATEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIMEREP" source="INCTIMEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPID" source="SUPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPNAME" source="SUPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAREXPPOS" source="YEAREXPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASINCONCOSLOC" source="WASINCONCOSLOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIFT" source="SHIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LONGITUDE" source="LONGITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASCOSVEHUSED" source="WASCOSVEHUSED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADDMENTALHEALTH" source="ADDMENTALHEALTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSNO" source="BUSNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NONCOSVEHINVOL" source="NONCOSVEHINVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POLICEREPORTNO" source="POLICEREPORTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCCATEGORY" source="INCCATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENTTYPE" source="EVENTTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTINCSEVERITY" source="ACTINCSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTSEVERITY" source="POTSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISINVESTREQ" source="ISINVESTREQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OTHERPEOPINV" source="OTHERPEOPINV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDESC" source="INCDESC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISDRAFT" source="ISDRAFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENTTOEMP" source="SENTTOEMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINALRTW" source="FINALRTW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WORKLOCATION" source="WORKLOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCSTATUS" source="INCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INCTYPE$MIDCONVERTED" source="INCTYPE"/>
+    </input>
+    <input node="INC_M1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTYPE" source="TEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INCTYPE$MIDCONVERTED" source="MIDCONVERTED"/>
+    </input>
+    <joinAttribute name="JOIN$INCTYPE$MIDCONVERTED"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_2" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="INCNO"/>
+      <viewAttribute id="INCTYPE"/>
+      <viewAttribute id="INCID" aggregationType="sum"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="EMPNAME"/>
+      <viewAttribute id="EMPID"/>
+      <viewAttribute id="EMPPOS"/>
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DEPT"/>
+      <viewAttribute id="SECTION"/>
+      <viewAttribute id="INCDATE"/>
+      <viewAttribute id="INCTIME" aggregationType="min"/>
+      <viewAttribute id="INCDATEREP"/>
+      <viewAttribute id="INCTIMEREP" aggregationType="min"/>
+      <viewAttribute id="SUPID"/>
+      <viewAttribute id="SUPNAME"/>
+      <viewAttribute id="YEAREXPPOS" aggregationType="sum"/>
+      <viewAttribute id="WASINCONCOSLOC"/>
+      <viewAttribute id="SHIFT"/>
+      <viewAttribute id="LATITUDE"/>
+      <viewAttribute id="LONGITUDE"/>
+      <viewAttribute id="WASCOSVEHUSED"/>
+      <viewAttribute id="ADDMENTALHEALTH"/>
+      <viewAttribute id="BUSNO"/>
+      <viewAttribute id="NONCOSVEHINVOL"/>
+      <viewAttribute id="POLICEREPORTNO"/>
+      <viewAttribute id="INCCATEGORY"/>
+      <viewAttribute id="EVENTTYPE"/>
+      <viewAttribute id="ACTINCSEVERITY"/>
+      <viewAttribute id="POTSEVERITY"/>
+      <viewAttribute id="ISINVESTREQ"/>
+      <viewAttribute id="OTHERPEOPINV"/>
+      <viewAttribute id="INCDESC"/>
+      <viewAttribute id="ISDRAFT"/>
+      <viewAttribute id="SENTTOEMP"/>
+      <viewAttribute id="FINALRTW"/>
+      <viewAttribute id="WORKLOCATION"/>
+      <viewAttribute id="INCSTATUS"/>
+      <viewAttribute hidden="true" id="JOIN$INCCATEGORY$MIDCONVERTED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCNO" source="INCNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTYPE" source="INCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCID" source="INCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPNAME" source="EMPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPID" source="EMPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPPOS" source="EMPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIVISION" source="DIVISION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SECTION" source="SECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATE" source="INCDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIME" source="INCTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATEREP" source="INCDATEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIMEREP" source="INCTIMEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPID" source="SUPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPNAME" source="SUPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAREXPPOS" source="YEAREXPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASINCONCOSLOC" source="WASINCONCOSLOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIFT" source="SHIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LONGITUDE" source="LONGITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASCOSVEHUSED" source="WASCOSVEHUSED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADDMENTALHEALTH" source="ADDMENTALHEALTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSNO" source="BUSNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NONCOSVEHINVOL" source="NONCOSVEHINVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POLICEREPORTNO" source="POLICEREPORTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENTTYPE" source="EVENTTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTINCSEVERITY" source="ACTINCSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTSEVERITY" source="POTSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISINVESTREQ" source="ISINVESTREQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OTHERPEOPINV" source="OTHERPEOPINV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDESC" source="INCDESC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISDRAFT" source="ISDRAFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENTTOEMP" source="SENTTOEMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINALRTW" source="FINALRTW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WORKLOCATION" source="WORKLOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCSTATUS" source="INCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INCCATEGORY$MIDCONVERTED" source="INCCATEGORY"/>
+    </input>
+    <input node="INC_M2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCCATEGORY" source="TEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INCCATEGORY$MIDCONVERTED" source="MIDCONVERTED"/>
+    </input>
+    <joinAttribute name="JOIN$INCCATEGORY$MIDCONVERTED"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_3" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="INCNO"/>
+      <viewAttribute id="INCTYPE"/>
+      <viewAttribute id="INCID" aggregationType="sum"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="EMPNAME"/>
+      <viewAttribute id="EMPID"/>
+      <viewAttribute id="EMPPOS"/>
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DEPT"/>
+      <viewAttribute id="SECTION"/>
+      <viewAttribute id="INCDATE"/>
+      <viewAttribute id="INCTIME" aggregationType="min"/>
+      <viewAttribute id="INCDATEREP"/>
+      <viewAttribute id="INCTIMEREP" aggregationType="min"/>
+      <viewAttribute id="SUPID"/>
+      <viewAttribute id="SUPNAME"/>
+      <viewAttribute id="YEAREXPPOS" aggregationType="sum"/>
+      <viewAttribute id="WASINCONCOSLOC"/>
+      <viewAttribute id="SHIFT"/>
+      <viewAttribute id="LATITUDE"/>
+      <viewAttribute id="LONGITUDE"/>
+      <viewAttribute id="WASCOSVEHUSED"/>
+      <viewAttribute id="ADDMENTALHEALTH"/>
+      <viewAttribute id="BUSNO"/>
+      <viewAttribute id="NONCOSVEHINVOL"/>
+      <viewAttribute id="POLICEREPORTNO"/>
+      <viewAttribute id="INCCATEGORY"/>
+      <viewAttribute id="EVENTTYPE"/>
+      <viewAttribute id="ACTINCSEVERITY"/>
+      <viewAttribute id="POTSEVERITY"/>
+      <viewAttribute id="ISINVESTREQ"/>
+      <viewAttribute id="OTHERPEOPINV"/>
+      <viewAttribute id="INCDESC"/>
+      <viewAttribute id="ISDRAFT"/>
+      <viewAttribute id="SENTTOEMP"/>
+      <viewAttribute id="FINALRTW"/>
+      <viewAttribute id="WORKLOCATION"/>
+      <viewAttribute id="INCSTATUS"/>
+      <viewAttribute hidden="true" id="JOIN$EVENTTYPE$MIDCONVERTED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_2">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCNO" source="INCNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTYPE" source="INCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCID" source="INCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPNAME" source="EMPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPID" source="EMPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPPOS" source="EMPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIVISION" source="DIVISION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SECTION" source="SECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATE" source="INCDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIME" source="INCTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATEREP" source="INCDATEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIMEREP" source="INCTIMEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPID" source="SUPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPNAME" source="SUPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAREXPPOS" source="YEAREXPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASINCONCOSLOC" source="WASINCONCOSLOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIFT" source="SHIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LONGITUDE" source="LONGITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASCOSVEHUSED" source="WASCOSVEHUSED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADDMENTALHEALTH" source="ADDMENTALHEALTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSNO" source="BUSNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NONCOSVEHINVOL" source="NONCOSVEHINVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POLICEREPORTNO" source="POLICEREPORTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCCATEGORY" source="INCCATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTINCSEVERITY" source="ACTINCSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTSEVERITY" source="POTSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISINVESTREQ" source="ISINVESTREQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OTHERPEOPINV" source="OTHERPEOPINV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDESC" source="INCDESC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISDRAFT" source="ISDRAFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENTTOEMP" source="SENTTOEMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINALRTW" source="FINALRTW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WORKLOCATION" source="WORKLOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCSTATUS" source="INCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EVENTTYPE$MIDCONVERTED" source="EVENTTYPE"/>
+    </input>
+    <input node="Projection_2_copy_copy">
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENTTYPE" source="TEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$EVENTTYPE$MIDCONVERTED" source="MIDCONVERTED"/>
+    </input>
+    <joinAttribute name="JOIN$EVENTTYPE$MIDCONVERTED"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_4" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="INCNO"/>
+      <viewAttribute id="INCTYPE"/>
+      <viewAttribute id="INCID" aggregationType="sum"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="EMPNAME"/>
+      <viewAttribute id="EMPID"/>
+      <viewAttribute id="EMPPOS"/>
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DEPT"/>
+      <viewAttribute id="SECTION"/>
+      <viewAttribute id="INCDATE"/>
+      <viewAttribute id="INCTIME" aggregationType="min"/>
+      <viewAttribute id="INCDATEREP"/>
+      <viewAttribute id="INCTIMEREP" aggregationType="min"/>
+      <viewAttribute id="SUPID"/>
+      <viewAttribute id="SUPNAME"/>
+      <viewAttribute id="YEAREXPPOS" aggregationType="sum"/>
+      <viewAttribute id="WASINCONCOSLOC"/>
+      <viewAttribute id="SHIFT"/>
+      <viewAttribute id="LATITUDE"/>
+      <viewAttribute id="LONGITUDE"/>
+      <viewAttribute id="WASCOSVEHUSED"/>
+      <viewAttribute id="ADDMENTALHEALTH"/>
+      <viewAttribute id="BUSNO"/>
+      <viewAttribute id="NONCOSVEHINVOL"/>
+      <viewAttribute id="POLICEREPORTNO"/>
+      <viewAttribute id="INCCATEGORY"/>
+      <viewAttribute id="EVENTTYPE"/>
+      <viewAttribute id="ACTINCSEVERITY"/>
+      <viewAttribute id="POTSEVERITY"/>
+      <viewAttribute id="ISINVESTREQ"/>
+      <viewAttribute id="OTHERPEOPINV"/>
+      <viewAttribute id="INCDESC"/>
+      <viewAttribute id="ISDRAFT"/>
+      <viewAttribute id="SENTTOEMP"/>
+      <viewAttribute id="FINALRTW"/>
+      <viewAttribute id="WORKLOCATION"/>
+      <viewAttribute id="INCSTATUS"/>
+      <viewAttribute hidden="true" id="JOIN$ACTINCSEVERITY$MIDCONVERTED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_3">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCNO" source="INCNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTYPE" source="INCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCID" source="INCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPNAME" source="EMPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPID" source="EMPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPPOS" source="EMPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIVISION" source="DIVISION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SECTION" source="SECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATE" source="INCDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIME" source="INCTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATEREP" source="INCDATEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIMEREP" source="INCTIMEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPID" source="SUPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPNAME" source="SUPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAREXPPOS" source="YEAREXPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASINCONCOSLOC" source="WASINCONCOSLOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIFT" source="SHIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LONGITUDE" source="LONGITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASCOSVEHUSED" source="WASCOSVEHUSED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADDMENTALHEALTH" source="ADDMENTALHEALTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSNO" source="BUSNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NONCOSVEHINVOL" source="NONCOSVEHINVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POLICEREPORTNO" source="POLICEREPORTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCCATEGORY" source="INCCATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENTTYPE" source="EVENTTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTSEVERITY" source="POTSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISINVESTREQ" source="ISINVESTREQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OTHERPEOPINV" source="OTHERPEOPINV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDESC" source="INCDESC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISDRAFT" source="ISDRAFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENTTOEMP" source="SENTTOEMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINALRTW" source="FINALRTW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WORKLOCATION" source="WORKLOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCSTATUS" source="INCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ACTINCSEVERITY$MIDCONVERTED" source="ACTINCSEVERITY"/>
+    </input>
+    <input node="Projection_2_copy_copy_copy">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTINCSEVERITY" source="TEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ACTINCSEVERITY$MIDCONVERTED" source="MIDCONVERTED"/>
+    </input>
+    <joinAttribute name="JOIN$ACTINCSEVERITY$MIDCONVERTED"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_5" cardinality="C1_1" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="INCNO"/>
+      <viewAttribute id="INCTYPE"/>
+      <viewAttribute id="INCID" aggregationType="sum"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="EMPNAME"/>
+      <viewAttribute id="EMPID"/>
+      <viewAttribute id="EMPPOS"/>
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DEPT"/>
+      <viewAttribute id="SECTION"/>
+      <viewAttribute id="INCDATE"/>
+      <viewAttribute id="INCTIME" aggregationType="min"/>
+      <viewAttribute id="INCDATEREP"/>
+      <viewAttribute id="INCTIMEREP" aggregationType="min"/>
+      <viewAttribute id="SUPID"/>
+      <viewAttribute id="SUPNAME"/>
+      <viewAttribute id="YEAREXPPOS" aggregationType="sum"/>
+      <viewAttribute id="WASINCONCOSLOC"/>
+      <viewAttribute id="SHIFT"/>
+      <viewAttribute id="LATITUDE"/>
+      <viewAttribute id="LONGITUDE"/>
+      <viewAttribute id="WASCOSVEHUSED"/>
+      <viewAttribute id="ADDMENTALHEALTH"/>
+      <viewAttribute id="BUSNO"/>
+      <viewAttribute id="NONCOSVEHINVOL"/>
+      <viewAttribute id="POLICEREPORTNO"/>
+      <viewAttribute id="INCCATEGORY"/>
+      <viewAttribute id="EVENTTYPE"/>
+      <viewAttribute id="ACTINCSEVERITY"/>
+      <viewAttribute id="POTSEVERITY"/>
+      <viewAttribute id="ISINVESTREQ"/>
+      <viewAttribute id="OTHERPEOPINV"/>
+      <viewAttribute id="INCDESC"/>
+      <viewAttribute id="ISDRAFT"/>
+      <viewAttribute id="SENTTOEMP"/>
+      <viewAttribute id="FINALRTW"/>
+      <viewAttribute id="WORKLOCATION"/>
+      <viewAttribute id="INCSTATUS"/>
+      <viewAttribute hidden="true" id="JOIN$POTSEVERITY$MIDCONVERTED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_4">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCNO" source="INCNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTYPE" source="INCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCID" source="INCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPNAME" source="EMPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPID" source="EMPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPPOS" source="EMPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIVISION" source="DIVISION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SECTION" source="SECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATE" source="INCDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIME" source="INCTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATEREP" source="INCDATEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIMEREP" source="INCTIMEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPID" source="SUPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPNAME" source="SUPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAREXPPOS" source="YEAREXPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASINCONCOSLOC" source="WASINCONCOSLOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIFT" source="SHIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LONGITUDE" source="LONGITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASCOSVEHUSED" source="WASCOSVEHUSED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADDMENTALHEALTH" source="ADDMENTALHEALTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSNO" source="BUSNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NONCOSVEHINVOL" source="NONCOSVEHINVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POLICEREPORTNO" source="POLICEREPORTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCCATEGORY" source="INCCATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENTTYPE" source="EVENTTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTINCSEVERITY" source="ACTINCSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISINVESTREQ" source="ISINVESTREQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OTHERPEOPINV" source="OTHERPEOPINV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDESC" source="INCDESC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISDRAFT" source="ISDRAFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENTTOEMP" source="SENTTOEMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINALRTW" source="FINALRTW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WORKLOCATION" source="WORKLOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCSTATUS" source="INCSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$POTSEVERITY$MIDCONVERTED" source="POTSEVERITY"/>
+    </input>
+    <input node="Projection_2_copy_copy_copy_copy">
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTSEVERITY" source="TEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$POTSEVERITY$MIDCONVERTED" source="MIDCONVERTED"/>
+    </input>
+    <joinAttribute name="JOIN$POTSEVERITY$MIDCONVERTED"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_6" cardinality="CN_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="INCNO"/>
+      <viewAttribute id="INCTYPE"/>
+      <viewAttribute id="INCID" aggregationType="sum"/>
+      <viewAttribute id="TITLE"/>
+      <viewAttribute id="EMPNAME"/>
+      <viewAttribute id="EMPID"/>
+      <viewAttribute id="EMPPOS"/>
+      <viewAttribute id="DIVISION"/>
+      <viewAttribute id="DEPT"/>
+      <viewAttribute id="SECTION"/>
+      <viewAttribute id="INCDATE"/>
+      <viewAttribute id="INCTIME" aggregationType="min"/>
+      <viewAttribute id="INCDATEREP"/>
+      <viewAttribute id="INCTIMEREP" aggregationType="min"/>
+      <viewAttribute id="SUPID"/>
+      <viewAttribute id="SUPNAME"/>
+      <viewAttribute id="YEAREXPPOS" aggregationType="sum"/>
+      <viewAttribute id="WASINCONCOSLOC"/>
+      <viewAttribute id="SHIFT"/>
+      <viewAttribute id="LATITUDE"/>
+      <viewAttribute id="LONGITUDE"/>
+      <viewAttribute id="WASCOSVEHUSED"/>
+      <viewAttribute id="ADDMENTALHEALTH"/>
+      <viewAttribute id="BUSNO"/>
+      <viewAttribute id="NONCOSVEHINVOL"/>
+      <viewAttribute id="POLICEREPORTNO"/>
+      <viewAttribute id="INCCATEGORY"/>
+      <viewAttribute id="EVENTTYPE"/>
+      <viewAttribute id="ACTINCSEVERITY"/>
+      <viewAttribute id="POTSEVERITY"/>
+      <viewAttribute id="ISINVESTREQ"/>
+      <viewAttribute id="OTHERPEOPINV"/>
+      <viewAttribute id="INCDESC"/>
+      <viewAttribute id="ISDRAFT"/>
+      <viewAttribute id="SENTTOEMP"/>
+      <viewAttribute id="FINALRTW"/>
+      <viewAttribute id="WORKLOCATION"/>
+      <viewAttribute id="INCSTATUS"/>
+      <viewAttribute hidden="true" id="JOIN$INCSTATUS$MIDCONVERTED"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Join_5">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCNO" source="INCNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTYPE" source="INCTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCID" source="INCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TITLE" source="TITLE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPNAME" source="EMPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPID" source="EMPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPPOS" source="EMPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DIVISION" source="DIVISION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DEPT" source="DEPT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SECTION" source="SECTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATE" source="INCDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIME" source="INCTIME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDATEREP" source="INCDATEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCTIMEREP" source="INCTIMEREP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPID" source="SUPID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SUPNAME" source="SUPNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="YEAREXPPOS" source="YEAREXPPOS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASINCONCOSLOC" source="WASINCONCOSLOC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIFT" source="SHIFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LATITUDE" source="LATITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LONGITUDE" source="LONGITUDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WASCOSVEHUSED" source="WASCOSVEHUSED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ADDMENTALHEALTH" source="ADDMENTALHEALTH"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BUSNO" source="BUSNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NONCOSVEHINVOL" source="NONCOSVEHINVOL"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POLICEREPORTNO" source="POLICEREPORTNO"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCCATEGORY" source="INCCATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EVENTTYPE" source="EVENTTYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ACTINCSEVERITY" source="ACTINCSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POTSEVERITY" source="POTSEVERITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISINVESTREQ" source="ISINVESTREQ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="OTHERPEOPINV" source="OTHERPEOPINV"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCDESC" source="INCDESC"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ISDRAFT" source="ISDRAFT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SENTTOEMP" source="SENTTOEMP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FINALRTW" source="FINALRTW"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WORKLOCATION" source="WORKLOCATION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INCSTATUS$MIDCONVERTED" source="INCSTATUS"/>
+    </input>
+    <input node="Projection_2_copy_copy_copy_copy_copy">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCSTATUS" source="TEXT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$INCSTATUS$MIDCONVERTED" source="MIDCONVERTED"/>
+    </input>
+    <joinAttribute name="JOIN$INCSTATUS$MIDCONVERTED"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_6">
+  <attributes>
+    <attribute id="ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID"/>
+      <keyMapping columnObjectName="Join_6" columnName="ID"/>
+    </attribute>
+    <attribute id="INCNO" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCNO"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCNO"/>
+    </attribute>
+    <attribute id="INCTYPE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCTYPE"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCTYPE"/>
+    </attribute>
+    <attribute id="TITLE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TITLE"/>
+      <keyMapping columnObjectName="Join_6" columnName="TITLE"/>
+    </attribute>
+    <attribute id="EMPNAME" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMPNAME"/>
+      <keyMapping columnObjectName="Join_6" columnName="EMPNAME"/>
+    </attribute>
+    <attribute id="EMPID" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMPID"/>
+      <keyMapping columnObjectName="Join_6" columnName="EMPID"/>
+    </attribute>
+    <attribute id="EMPPOS" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMPPOS"/>
+      <keyMapping columnObjectName="Join_6" columnName="EMPPOS"/>
+    </attribute>
+    <attribute id="DIVISION" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DIVISION"/>
+      <keyMapping columnObjectName="Join_6" columnName="DIVISION"/>
+    </attribute>
+    <attribute id="DEPT" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DEPT"/>
+      <keyMapping columnObjectName="Join_6" columnName="DEPT"/>
+    </attribute>
+    <attribute id="SECTION" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SECTION"/>
+      <keyMapping columnObjectName="Join_6" columnName="SECTION"/>
+    </attribute>
+    <attribute id="INCDATE" order="12" displayAttribute="false" attributeHierarchyActive="false" semanticType="date">
+      <descriptions defaultDescription="INCDATE"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCDATE"/>
+    </attribute>
+    <attribute id="INCTIME" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCTIME"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCTIME"/>
+    </attribute>
+    <attribute id="INCDATEREP" order="14" displayAttribute="false" attributeHierarchyActive="false" semanticType="date">
+      <descriptions defaultDescription="INCDATEREP"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCDATEREP"/>
+    </attribute>
+    <attribute id="INCTIMEREP" order="15" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCTIMEREP"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCTIMEREP"/>
+    </attribute>
+    <attribute id="SUPID" order="16" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUPID"/>
+      <keyMapping columnObjectName="Join_6" columnName="SUPID"/>
+    </attribute>
+    <attribute id="SUPNAME" order="17" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SUPNAME"/>
+      <keyMapping columnObjectName="Join_6" columnName="SUPNAME"/>
+    </attribute>
+    <attribute id="WASINCONCOSLOC" order="19" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WASINCONCOSLOC"/>
+      <keyMapping columnObjectName="Join_6" columnName="WASINCONCOSLOC"/>
+    </attribute>
+    <attribute id="SHIFT" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SHIFT"/>
+      <keyMapping columnObjectName="Join_6" columnName="SHIFT"/>
+    </attribute>
+    <attribute id="LATITUDE" order="21" displayAttribute="false" attributeHierarchyActive="false" semanticType="geoLocation.latitude">
+      <descriptions defaultDescription="LATITUDE"/>
+      <keyMapping columnObjectName="Join_6" columnName="LATITUDE"/>
+    </attribute>
+    <attribute id="LONGITUDE" order="22" displayAttribute="false" attributeHierarchyActive="false" semanticType="geoLocation.longitude">
+      <descriptions defaultDescription="LONGITUDE"/>
+      <keyMapping columnObjectName="Join_6" columnName="LONGITUDE"/>
+    </attribute>
+    <attribute id="WASCOSVEHUSED" order="23" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WASCOSVEHUSED"/>
+      <keyMapping columnObjectName="Join_6" columnName="WASCOSVEHUSED"/>
+    </attribute>
+    <attribute id="ADDMENTALHEALTH" order="24" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ADDMENTALHEALTH"/>
+      <keyMapping columnObjectName="Join_6" columnName="ADDMENTALHEALTH"/>
+    </attribute>
+    <attribute id="BUSNO" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BUSNO"/>
+      <keyMapping columnObjectName="Join_6" columnName="BUSNO"/>
+    </attribute>
+    <attribute id="NONCOSVEHINVOL" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NONCOSVEHINVOL"/>
+      <keyMapping columnObjectName="Join_6" columnName="NONCOSVEHINVOL"/>
+    </attribute>
+    <attribute id="POLICEREPORTNO" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POLICEREPORTNO"/>
+      <keyMapping columnObjectName="Join_6" columnName="POLICEREPORTNO"/>
+    </attribute>
+    <attribute id="INCCATEGORY" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCCATEGORY"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCCATEGORY"/>
+    </attribute>
+    <attribute id="EVENTTYPE" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EVENTTYPE"/>
+      <keyMapping columnObjectName="Join_6" columnName="EVENTTYPE"/>
+    </attribute>
+    <attribute id="ACTINCSEVERITY" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ACTINCSEVERITY"/>
+      <keyMapping columnObjectName="Join_6" columnName="ACTINCSEVERITY"/>
+    </attribute>
+    <attribute id="POTSEVERITY" order="31" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POTSEVERITY"/>
+      <keyMapping columnObjectName="Join_6" columnName="POTSEVERITY"/>
+    </attribute>
+    <attribute id="ISINVESTREQ" order="32" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ISINVESTREQ"/>
+      <keyMapping columnObjectName="Join_6" columnName="ISINVESTREQ"/>
+    </attribute>
+    <attribute id="OTHERPEOPINV" order="33" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="OTHERPEOPINV"/>
+      <keyMapping columnObjectName="Join_6" columnName="OTHERPEOPINV"/>
+    </attribute>
+    <attribute id="INCDESC" order="34" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCDESC"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCDESC"/>
+    </attribute>
+    <attribute id="ISDRAFT" order="35" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ISDRAFT"/>
+      <keyMapping columnObjectName="Join_6" columnName="ISDRAFT"/>
+    </attribute>
+    <attribute id="SENTTOEMP" order="36" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SENTTOEMP"/>
+      <keyMapping columnObjectName="Join_6" columnName="SENTTOEMP"/>
+    </attribute>
+    <attribute id="FINALRTW" order="37" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FINALRTW"/>
+      <keyMapping columnObjectName="Join_6" columnName="FINALRTW"/>
+    </attribute>
+    <attribute id="WORKLOCATION" order="38" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WORKLOCATION"/>
+      <keyMapping columnObjectName="Join_6" columnName="WORKLOCATION"/>
+    </attribute>
+    <attribute id="INCSTATUS" order="39" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TEXT"/>
+      <keyMapping columnObjectName="Join_6" columnName="INCSTATUS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="INCID" order="4" aggregationType="sum" measureType="simple" unconverted="false">
+      <descriptions defaultDescription="INCID"/>
+      <measureMapping columnObjectName="Join_6" columnName="INCID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="YEAREXPPOS" order="18" aggregationType="count" measureType="simple" unconverted="false">
+      <descriptions defaultDescription="YEAREXPPOS"/>
+      <measureMapping columnObjectName="Join_6" columnName="YEAREXPPOS"/>
+      <exceptionAggregationMetadata/>
+    </measure></baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+
+  <sharedDimensions/>
+
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="525" y="112"/>
+    
+      <rectangleSize width="133"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="INC_T_DATA" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="INC_M1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="91" y="1016"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="INC_M2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="675" y="856"/>
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_2_copy_copy" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="216" y="720"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2_copy_copy_copy" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="270" y="536"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2_copy_copy_copy_copy" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="570" y="376"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2_copy_copy_copy_copy_copy" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="923" y="288"/>
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="118" y="856"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="INC_T_DATA" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="-145"/>
+      <rectangleSize width="195"/>
+    </shape>
+    <shape modelObjectName="INC_M1" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="382" y="107"/>
+      <rectangleSize width="175"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="557" y="696"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_1" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="195"/>
+    </shape>
+    <shape modelObjectName="INC_M2" modelObjectNameSpace="Join_2" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="280" y="364"/>
+      <rectangleSize width="175"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="530" y="536"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_2" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="195"/>
+    </shape>
+    <shape modelObjectName="Projection_2_copy_copy" modelObjectNameSpace="Join_3" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="260" y="590"/>
+      <rectangleSize width="205"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="296" y="376"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_3" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="195"/>
+    </shape>
+    <shape modelObjectName="Projection_2_copy_copy_copy" modelObjectNameSpace="Join_4" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="245" y="582"/>
+      <rectangleSize width="240"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="520" y="246"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_4" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="195"/>
+    </shape>
+    <shape modelObjectName="Projection_2_copy_copy_copy_copy" modelObjectNameSpace="Join_5" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="279" y="696"/>
+      <rectangleSize width="274"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Join_6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="727" y="176"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="Join_5" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="195"/>
+    </shape>
+    <shape modelObjectName="Projection_2_copy_copy_copy_copy_copy" modelObjectNameSpace="Join_6" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="286" y="649"/>
+      <rectangleSize width="309"/>
+    </shape>
+    <shape modelObjectName="Join_6" modelObjectNameSpace="StarJoinViewNodeInput" modelObjectType="repository">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="250"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

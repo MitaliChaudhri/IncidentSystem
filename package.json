@@ -16,6 +16,7 @@
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
     "@sap/eslint-plugin-cds": "^3",
+    "@sap/ux-specification": "^1.120.14",
     "eslint": "^9",
     "rimraf": "^5.0.5"
   },
@@ -26,12 +27,13 @@
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
     "watch-cosincidentportal": "cds watch --open cosincidentportal/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-cosincidentportalhs": "cds watch --open cosincidentportalhs/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-cosincidentportalhs": "cds watch --open cosincidentportalhs/webapp/index.html?sap-ui-xx-viewCache=false",
+    "watch-cosincidentportalemp": "cds watch --open cosincidentportalemp/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "requires": {
       "db": "hana",
-      "auth": "xsuaa",
+      "auth": "mocked",
       "[production]": {
         "auth": "xsuaa"
       }
@@ -40,6 +42,7 @@
   "sapux": [
     "app/cosreportincident",
     "app/cosincidentportal",
-    "app/cosincidentportalhs"
+    "app/cosincidentportalhs",
+    "app/cosincidentportalemp"
   ]
 }

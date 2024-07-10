@@ -48,7 +48,7 @@ sap.ui.define(
             success: function (response) {
               console.log("Success:", response);
               oMasterData.setProperty("/MasterData", response.value)
-              debugger;
+              // debugger;
             },
           });
   

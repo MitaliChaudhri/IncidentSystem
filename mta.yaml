@@ -48,6 +48,10 @@ modules:
       - cosincidentportalhs.zip
       name: cosincidentportalhs
       target-path: resources/
+    - artifacts:
+      - cosincidentportalemp.zip
+      name: cosincidentportalemp
+      target-path: resources/
 - name: cosreportincident
   type: html5
   path: app/cosreportincident
@@ -71,6 +75,16 @@ modules:
 - name: cosincidentportalhs
   type: html5
   path: app/cosincidentportalhs
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: cosincidentportalemp
+  type: html5
+  path: app/cosincidentportalemp
   build-parameters:
     build-result: dist
     builder: custom
@@ -152,7 +166,7 @@ resources:
   parameters:
     config:
       tenant-mode: dedicated
-      xsappname: incident_1-${org}-${space}
+      xsappname: incident_1-initium_digital-${space}
     path: ./xs-security.json
     service: xsuaa
     service-name: incident_1-xsuaa-service

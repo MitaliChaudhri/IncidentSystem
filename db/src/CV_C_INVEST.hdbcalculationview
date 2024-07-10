@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_C_INVEST" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_C_INVEST"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="COS_INVESTIGATION">
+    <resourceUri>COS_INVESTIGATION</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews/>
+
+<logicalModel id="COS_INVESTIGATION">
+  <attributes>
+    <attribute id="DATEINVEST" order="1" semanticType="date" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DATEINVEST"/>
+      <keyMapping columnObjectName="COS_INVESTIGATION" columnName="DATEINVEST"/>
+    </attribute>
+    <attribute id="INVESTIGATIONBY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INVESTIGATIONBY"/>
+      <keyMapping columnObjectName="COS_INVESTIGATION" columnName="INVESTIGATIONBY"/>
+    </attribute>
+    <attribute id="EMPRTW" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EMPRTW"/>
+      <keyMapping columnObjectName="COS_INVESTIGATION" columnName="EMPRTW"/>
+    </attribute>
+    <attribute id="INVSTATDETAILS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INVSTATDETAILS"/>
+      <keyMapping columnObjectName="COS_INVESTIGATION" columnName="INVSTATDETAILS"/>
+    </attribute>
+    <attribute id="INCI_ID" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCI_ID"/>
+      <keyMapping columnObjectName="COS_INVESTIGATION" columnName="INCI_ID"/>
+    </attribute>
+    <attribute id="INVSTSTATUS" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INVSTSTATUS"/>
+      <keyMapping columnObjectName="COS_INVESTIGATION" columnName="INVSTSTATUS"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes>
+    <calculatedAttribute id="SameAsINCID" order="8" semanticType="empty" displayAttribute="false" attributeHierarchyActive="false">
+      <keyCalculation datatype="BIGINT" expressionLanguage="SQL">
+        <formula>&quot;INCI_INCID&quot;</formula>
+      </keyCalculation>
+      </calculatedAttribute>
+  </calculatedAttributes>
+  <baseMeasures>
+    <measure id="INCI_INCID" order="6" aggregationType="count" measureType="simple">
+      <descriptions defaultDescription="INCI_INCID"/>
+      <measureMapping columnObjectName="COS_INVESTIGATION" columnName="INCI_INCID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

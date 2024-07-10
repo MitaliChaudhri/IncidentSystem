@@ -28,3 +28,5 @@ ID,mid,text,type
 27,27,Open,FollowStat
 28,28,Complete,FollowStat
 29,29,In Progress,FollowStat
+30,30,In Progress,InvstStatus
+31,31,Completed,InvstStatus

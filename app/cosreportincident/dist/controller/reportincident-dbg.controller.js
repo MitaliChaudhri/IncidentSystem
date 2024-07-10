@@ -221,6 +221,7 @@ sap.ui.define([
                         oModel.setProperty("/supid", response.value[0].supid);
                         oModel.setProperty("/supname", response.value[0].supname);
                         oModel.setProperty("/worklocation", response.value[0].worklocation);
+                        oModel.setProperty("/empemail", response.value[0].empemail);
                         //debugger;
                     },
                   }); 
@@ -279,7 +280,7 @@ sap.ui.define([
                 const COSEmployee = oModel.getProperty("/COSEmployee");
                 const Contractor = oModel.getProperty("/Contractor");
                 const Member = oModel.getProperty("/Member");
-
+                const empemail = oModel.getProperty("/empemail");
                 const model = this.getView().getModel();
 
                 oModel.setProperty("")
@@ -375,6 +376,7 @@ sap.ui.define([
                     isdraft         : isdraft,
                     worklocation    : worklocation,
                     worklocation    : worklocation,
+                    empemail        : empemail,
                     CosEquip : COSEquipments.map((item) => {
                         item.EquipNo = parseInt(item.EquipNo, 10);
                         return item;

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_C_INJURY" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_C_INJURY"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="COS_WCB">
+    <resourceUri>COS_WCB</resourceUri>
+  </DataSource>
+  <DataSource id="COS_INJURY">
+    <resourceUri>COS_INJURY</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_N" joinType="leftOuter">
+    <viewAttributes>
+      <viewAttribute id="INJDATE"/>
+      <viewAttribute id="PRIMARYINJ"/>
+      <viewAttribute id="BODYPART"/>
+      <viewAttribute id="SIDE"/>
+      <viewAttribute id="INCI_ID"/>
+      <viewAttribute id="INCI_INCID" aggregationType="sum"/>
+      <viewAttribute id="CLAIMSTATUS"/>
+      <viewAttribute id="WHYDENIED"/>
+      <viewAttribute hidden="true" id="JOIN$ID$WCBF_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="COS_WCB">
+      <mapping xsi:type="Calculation:AttributeMapping" target="INJDATE" source="INJDATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCI_ID" source="INCI_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="INCI_INCID" source="INCI_INCID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CLAIMSTATUS" source="CLAIMSTATUS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WHYDENIED" source="WHYDENIED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID$WCBF_ID" source="ID"/>
+    </input>
+    <input node="COS_INJURY">
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRIMARYINJ" source="PRIMARYINJ"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="BODYPART" source="BODYPART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SIDE" source="SIDE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$ID$WCBF_ID" source="WCBF_ID"/>
+    </input>
+    <joinAttribute name="JOIN$ID$WCBF_ID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="INJDATE" order="1" semanticType="date" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INJDATE"/>
+      <keyMapping columnObjectName="Join_1" columnName="INJDATE"/>
+    </attribute>
+    <attribute id="PRIMARYINJ" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRIMARYINJ"/>
+      <keyMapping columnObjectName="Join_1" columnName="PRIMARYINJ"/>
+    </attribute>
+    <attribute id="BODYPART" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BODYPART"/>
+      <keyMapping columnObjectName="Join_1" columnName="BODYPART"/>
+    </attribute>
+    <attribute id="SIDE" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SIDE"/>
+      <keyMapping columnObjectName="Join_1" columnName="SIDE"/>
+    </attribute>
+    <attribute id="INCI_ID" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCI_ID"/>
+      <keyMapping columnObjectName="Join_1" columnName="INCI_ID"/>
+    </attribute>
+    <attribute id="CLAIMSTATUS" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CLAIMSTATUS"/>
+      <keyMapping columnObjectName="Join_1" columnName="CLAIMSTATUS"/>
+    </attribute>
+    <attribute id="WHYDENIED" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WHYDENIED"/>
+      <keyMapping columnObjectName="Join_1" columnName="WHYDENIED"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="INCI_INCID" order="6" aggregationType="count" measureType="simple">
+      <descriptions defaultDescription="INCI_INCID"/>
+      <measureMapping columnObjectName="Join_1" columnName="INCI_INCID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="110" y="204"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="COS_WCB" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="194"/>
+    </shape>
+    <shape modelObjectName="COS_INJURY" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="269" y="30"/>
+      <rectangleSize width="154"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

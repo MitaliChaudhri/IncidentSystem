@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_C_CORR_ACTIO" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_C_CORR_ACTIO"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="COS_CORRECTACTION">
+    <resourceUri>COS_CORRECTACTION</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews/>
+
+<logicalModel id="COS_CORRECTACTION">
+  <attributes>
+    <attribute id="ASSIGNTO" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ASSIGNTO"/>
+      <keyMapping columnObjectName="COS_CORRECTACTION" columnName="ASSIGNTO"/>
+    </attribute>
+    <attribute id="DUEDATE" order="2" semanticType="date" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DUEDATE"/>
+      <keyMapping columnObjectName="COS_CORRECTACTION" columnName="DUEDATE"/>
+    </attribute>
+    <attribute id="CASTATUS" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CASTATUS"/>
+      <keyMapping columnObjectName="COS_CORRECTACTION" columnName="CASTATUS"/>
+    </attribute>
+    <attribute id="COMMENTS" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMMENTS"/>
+      <keyMapping columnObjectName="COS_CORRECTACTION" columnName="COMMENTS"/>
+    </attribute>
+    <attribute id="INCI_ID" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCI_ID"/>
+      <keyMapping columnObjectName="COS_CORRECTACTION" columnName="INCI_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="INCI_INCID" order="5" aggregationType="count" measureType="simple">
+      <descriptions defaultDescription="INCI_INCID"/>
+      <measureMapping columnObjectName="COS_CORRECTACTION" columnName="INCI_INCID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

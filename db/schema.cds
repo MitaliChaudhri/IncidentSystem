@@ -44,7 +44,8 @@ entity Incident : cuid, managed {
         senttoemp       : String(1) default '0';
         finalRTW        : String(1) default '0';
         worklocation    : String(250);
-        incStatus       : String(10) default 'Open';
+        incStatus       : String(10) default '25';
+        empemail       :String(100);
         CosEquip        : Composition of many Equipment
                               on CosEquip.inci = $self;
         Witn            : Composition of many Witness
@@ -141,6 +142,7 @@ entity Investigation : cuid, managed {
         InvStatDetails  : String(500);
         INCI_ID         : String(36);
         INCI_INCID      : Integer;
+        InvstStatus     :String(20);
 }
 
 

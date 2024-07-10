@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_C_FOLLOW" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_C_FOLLOW"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="COS_FOLLOWUP">
+    <resourceUri>COS_FOLLOWUP</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews/>
+
+<logicalModel id="COS_FOLLOWUP">
+  <attributes>
+    <attribute id="FOLLOWCRDATE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOLLOWCRDATE"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="FOLLOWCRDATE"/>
+    </attribute>
+    <attribute id="FOLLOWUPCRBY" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOLLOWUPCRBY"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="FOLLOWUPCRBY"/>
+    </attribute>
+    <attribute id="FOLLOUPDUEDATE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOLLOUPDUEDATE"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="FOLLOUPDUEDATE"/>
+    </attribute>
+    <attribute id="FOLLOWUPSTAT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOLLOWUPSTAT"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="FOLLOWUPSTAT"/>
+    </attribute>
+    <attribute id="FOLLOWUPCRFOR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOLLOWUPCRFOR"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="FOLLOWUPCRFOR"/>
+    </attribute>
+    <attribute id="FOLLOWUPNOTES" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOLLOWUPNOTES"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="FOLLOWUPNOTES"/>
+    </attribute>
+    <attribute id="COMPDATE" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="COMPDATE"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="COMPDATE"/>
+    </attribute>
+    <attribute id="FOLLOWUPFLG" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FOLLOWUPFLG"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="FOLLOWUPFLG"/>
+    </attribute>
+    <attribute id="INCI_ID" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCI_ID"/>
+      <keyMapping columnObjectName="COS_FOLLOWUP" columnName="INCI_ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="INCI_INCID" order="10" aggregationType="count" measureType="simple">
+      <descriptions defaultDescription="INCI_INCID"/>
+      <measureMapping columnObjectName="COS_FOLLOWUP" columnName="INCI_INCID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

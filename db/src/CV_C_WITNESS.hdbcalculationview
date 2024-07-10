@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_C_WITNESS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true" application="BAS">
+<descriptions defaultDescription="CV_C_WITNESS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="COS_WITNESS">
+    <resourceUri>COS_WITNESS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews/>
+
+<logicalModel id="COS_WITNESS">
+  <attributes>
+    <attribute id="INCI_ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="INCI_ID"/>
+      <keyMapping columnObjectName="COS_WITNESS" columnName="INCI_ID"/>
+    </attribute>
+    <attribute id="WITNAME" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WITNAME"/>
+      <keyMapping columnObjectName="COS_WITNESS" columnName="WITNAME"/>
+    </attribute>
+    <attribute id="WITCONTACT" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WITCONTACT"/>
+      <keyMapping columnObjectName="COS_WITNESS" columnName="WITCONTACT"/>
+    </attribute>
+    <attribute id="WITEMAIL" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WITEMAIL"/>
+      <keyMapping columnObjectName="COS_WITNESS" columnName="WITEMAIL"/>
+    </attribute>
+    <attribute id="WITSTATEMENT" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WITSTATEMENT"/>
+      <keyMapping columnObjectName="COS_WITNESS" columnName="WITSTATEMENT"/>
+    </attribute></attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="INCI_INCID" order="2" aggregationType="count" measureType="simple">
+      <descriptions defaultDescription="INCI_INCID"/>
+      <measureMapping columnObjectName="COS_WITNESS" columnName="INCI_INCID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures>
+    <measure id="Same_INCID" order="7" aggregationType="sum" measureType="simple" datatype="BIGINT" expressionLanguage="SQL">
+      <formula>&quot;INCI_INCID&quot;</formula>
+      
+      <exceptionAggregationMetadata/>
+    </measure>
+  </calculatedMeasures>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  </shapes>
+</layout>
+</Calculation:scenario>

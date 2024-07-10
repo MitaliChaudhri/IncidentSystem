@@ -254,7 +254,11 @@
  <Text
                                 text="{path: 'incCategory', formatter: '.formatIncidentType'}"
                             />
-                            <Text text="{incStatus}" />
+                            
+                            <Text
+                                text="{path: 'incStatus', formatter: '.formatIncidentType'}"
+                            />
+                            <!-- <Text text="{incStatus}" /> -->
                            
                         </cells>
                     </ColumnListItem>

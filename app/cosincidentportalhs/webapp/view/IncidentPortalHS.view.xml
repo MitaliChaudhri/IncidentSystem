@@ -353,6 +353,7 @@
                                                 class="sapUiSmallMarginBegin"
                                                 width="20rem"
                                                 placeholder="Enter maximum 200 character only"
+                                                editable="false"
                                             />
 
                                             <Label
@@ -365,6 +366,7 @@
                                                 class="sapUiSmallMarginBegin"
                                                 width="20rem"
                                                 placeholder="Enter maximum 200 character only"
+                                                editable="false"
                                             />
                                         </HBox>
                                     </content>
@@ -411,6 +413,7 @@
                                                     columns="2"
                                                     selectedIndex="{localModel>/Payload1/wascosvehused}"
                                                     select="onRadioSelect"
+                                                    editable="false"
                                                 >
                                                     <buttons>
                                                         <RadioButton
@@ -433,20 +436,7 @@
                                                                 placeholder="Enter Maximum 200 characters only."
                                                                 width="20rem"
                                                                 class="sapUiLargeMarginRight"
-                                                            />
-
-                                                            <Button
-                                                                icon="sap-icon://add"
-                                                                type="Default"
-                                                                press="onAddCOSEquip"
-                                                                class="sapUiTinyMarginBegin"
-                                                            />
-
-                                                            <Button
-                                                                icon="sap-icon://delete"
-                                                                type="Reject"
-                                                                press="onDeleteCOS"
-                                                                class="sapUiTinyMarginBegin"
+                                                                editable="false"
                                                             />
                                                         </HBox>
                                                     </CustomListItem>
@@ -458,6 +448,7 @@
                                                 <Input
                                                     value="{localModel>/Payload1/busno}"
                                                     placeholder="Enter maximum 100 character only"
+                                                    editable="false"
                                                 />
 
                                                 <Label
@@ -469,6 +460,7 @@
                                                     columns="2"
                                                     selectedIndex="{localModel>/Payload1/noncosvehinvol}"
                                                     select="onRadioSelect"
+                                                    editable="false"
                                                 >
                                                     <buttons>
                                                         <RadioButton
@@ -485,6 +477,7 @@
                                                 />
                                                 <Input
                                                     value="{localModel>/Payload1/policereportno}"
+                                                    editable="false"
                                                 />
                                             </f:content>
                                         </f:SimpleForm>
@@ -499,6 +492,7 @@
                                                 columns="2"
                                                 selectedIndex="{localModel>/Payload1/addwellness}"
                                                 select="onRadioSelect"
+                                                editable="false"
                                             >
                                                 <RadioButton text="Yes" />
                                                 <RadioButton text="No" />
@@ -512,19 +506,6 @@
                                         />
 
                                         <Panel expandable="false">
-                                            <headerToolbar>
-                                                <OverflowToolbar>
-                                                    <m:Title text="" />
-                                                    <ToolbarSpacer />
-                                                    <Button
-                                                        icon="sap-icon://add"
-                                                        type="Emphasized"
-                                                        press="onAddWitness"
-                                                        visible="{= ${localModel>/Payload1/addwellness} === 0 ? true :false}"
-                                                    />
-                                                </OverflowToolbar>
-                                            </headerToolbar>
-
                                             <Table
                                                 items="{localModel>/Payload1/witness}"
                                                 visible="{= ${localModel>/Payload1/addwellness} === 0 ? true :false}"
@@ -560,25 +541,23 @@
                                                     <cells>
                                                         <Input
                                                             value="{localModel>witname}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>witcontact}"
                                                             maxLength="10"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>witemail}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>witstatement}"
-                                                        />
-
-                                                        <Button
-                                                            icon="sap-icon://delete"
-                                                            type="Reject"
-                                                            press="onDelete"
+                                                            editable="false"
                                                         />
                                                     </cells>
                                                 </ColumnListItem>
@@ -632,6 +611,7 @@
                                         sorter: { path: 'text' },
                                         filters: [{path: 'type', operator: 'EQ', value1: 'IncidentCategory'}]
                                     }"
+                                                    editable="false"
                                                 >
                                                     <core:Item
                                                         key="{mid}"
@@ -654,6 +634,7 @@
                                         sorter: { path: 'text' },
                                         filters: [{path: 'type', operator: 'EQ', value1: 'IncidentTypes'}]
                                     }"
+                                                    editable="false"
                                                 >
                                                     <core:Item
                                                         key="{mid}"
@@ -674,6 +655,7 @@
                                         sorter: { path: 'text' },
                                         filters: [{path: 'type', operator: 'EQ', value1: 'TypeofEvents'}]
                                     }"
+                                                    editable="false"
                                                 >
                                                     <core:Item
                                                         key="{mid}"
@@ -694,6 +676,7 @@
                                         sorter: { path: 'text'},
                                         filters: [{path: 'type', operator: 'EQ', value1: 'IncSevirity'}]
                                     }"
+                                                    editable="false"
                                                 >
                                                     <core:Item
                                                         key="{mid}"
@@ -714,6 +697,7 @@
                                         sorter: { path: 'text' },
                                         filters: [{path: 'type', operator: 'EQ', value1: 'IncSevirity'}]
                                     }"
+                                                    editable="false"
                                                 >
                                                     <core:Item
                                                         key="{mid}"
@@ -729,6 +713,7 @@
                                                     columns="2"
                                                     selectedIndex="{localModel>/Payload1/isinvestreq}"
                                                     select="onRadioSelect"
+                                                    editable="false"
                                                 >
                                                     <buttons>
                                                         <RadioButton
@@ -752,14 +737,17 @@
                                                 <CheckBox
                                                     text="COS Employee"
                                                     selected="{localModel>/Payload1/child1}"
+                                                    editable="false"
                                                 />
                                                 <CheckBox
                                                     text="Contractor"
                                                     selected="{localModel>/Payload1/child2}"
+                                                    editable="false"
                                                 />
                                                 <CheckBox
                                                     text="Member of the Public"
                                                     selected="{localModel>/Payload1/child3}"
+                                                    editable="false"
                                                 />
                                             </m:FlexBox>
                                         </HBox>
@@ -773,12 +761,6 @@
                                                 <OverflowToolbar>
                                                     <m:Title
                                                         text="COS Employee"
-                                                    />
-                                                    <ToolbarSpacer />
-                                                    <Button
-                                                        icon="sap-icon://add"
-                                                        type="Emphasized"
-                                                        press="onAddCOSEmployee"
                                                     />
                                                 </OverflowToolbar>
                                             </headerToolbar>
@@ -820,28 +802,27 @@
                                                     <cells>
                                                         <Input
                                                             value="{localModel>empid}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>empname}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>exp}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>association}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>shift}"
-                                                        />
-
-                                                        <Button
-                                                            icon="sap-icon://delete"
-                                                            type="Reject"
-                                                            press="onDeleteCOSEmp"
+                                                            editable="false"
                                                         />
                                                     </cells>
                                                 </ColumnListItem>
@@ -856,12 +837,6 @@
                                                 <OverflowToolbar>
                                                     <m:Title
                                                         text="Contractor"
-                                                    />
-                                                    <ToolbarSpacer />
-                                                    <Button
-                                                        icon="sap-icon://add"
-                                                        type="Emphasized"
-                                                        press="onAddContractor"
                                                     />
                                                 </OverflowToolbar>
                                             </headerToolbar>
@@ -905,29 +880,28 @@
                                                     <cells>
                                                         <Input
                                                             value="{localModel>contractname}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>contractno}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>cosprojmgrname}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>compadd}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>contactno}"
                                                             maxLength="10"
-                                                        />
-
-                                                        <Button
-                                                            icon="sap-icon://delete"
-                                                            type="Reject"
-                                                            press="onDeleteContarctor"
+                                                            editable="false"
                                                         />
                                                     </cells>
                                                 </ColumnListItem>
@@ -942,12 +916,6 @@
                                                 <OverflowToolbar>
                                                     <m:Title
                                                         text="Member of Public"
-                                                    />
-                                                    <ToolbarSpacer />
-                                                    <Button
-                                                        icon="sap-icon://add"
-                                                        type="Emphasized"
-                                                        press="onAddMember"
                                                     />
                                                 </OverflowToolbar>
                                             </headerToolbar>
@@ -992,18 +960,22 @@
                                                     <cells>
                                                         <Input
                                                             value="{localModel>name}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>address}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>phone}"
+                                                            editable="false"
                                                         />
 
                                                         <Input
                                                             value="{localModel>email}"
+                                                            editable="false"
                                                         />
 
                                                         <RadioButtonGroup
@@ -1011,6 +983,7 @@
                                                             columns="2"
                                                             selectedIndex="{localModel>assistedbycos}"
                                                             select="onRadioSelect"
+                                                            editable="false"
                                                         >
                                                             <buttons>
                                                                 <RadioButton
@@ -1024,12 +997,7 @@
 
                                                         <Input
                                                             value="{localModel>cosempname}"
-                                                        />
-
-                                                        <Button
-                                                            icon="sap-icon://delete"
-                                                            type="Reject"
-                                                            press="onDeleteMember"
+                                                            editable="false"
                                                         />
                                                     </cells>
                                                 </ColumnListItem>
@@ -1067,6 +1035,7 @@
                                         rows="4"
                                         ariaLabelledBy="TextAreaLabel"
                                         value="{localModel>/Payload1/incdesc}"
+                                        editable="false"
                                     />
                                 </content>
                             </Panel>
@@ -1140,6 +1109,25 @@
                                             </RadioButtonGroup>
 
                                             <Label
+                                                text="Investigation Status"
+                                            />
+                                            <Select
+                                                editable="false"
+                                                forceSelection="false"
+                                                selectedKey="{localModel>/Payload/InvstStatus}"
+                                                items="{
+                                        path: '/IncMData',
+                                        sorter: { path: 'text' },
+                                        filters: [{path: 'type', operator: 'EQ', value1: 'InvstStatus'}]
+                                    }"
+                                            >
+                                                <core:Item
+                                                    key="{mid}"
+                                                    text="{text}"
+                                                />
+                                            </Select>
+
+                                            <Label
                                                 text="Investigation status details"
                                             />
                                             <TextArea
@@ -1154,9 +1142,9 @@
                                     <OverflowToolbar>
                                         <ToolbarSpacer />
                                         <Button
-                                            visible="false"
+                                            visible="true"
                                             type="Emphasized"
-                                            text="Submit"
+                                            text="Complete Investigation"
                                             press="onSubmitInvestigation"
                                             id="savebutton"
                                         />
@@ -1333,6 +1321,7 @@ ${CAStatus} === '26' ? 'Closed' :
                                                     icon="sap-icon://activity-assigned-to-goal"
                                                     type="Neutral"
                                                     press="onDefaultDialogPressCA"
+                                                    text="Re-Assign"
                                                 />
                                             </HBox>
                                         </cells>
@@ -1508,7 +1497,9 @@ ${CAStatus} === '26' ? 'Closed' :
                                         </Column>
                                     </columns>
 
-                                    <ColumnListItem  highlight="{= ${followupstat} === '28' ? 'Success' : 'Error'}">
+                                    <ColumnListItem
+                                        highlight="{= ${followupstat} === '28' ? 'Success' : 'Error'}"
+                                    >
                                         <cells>
                                             <Input
                                                 value="{createdAt}"
@@ -1809,13 +1800,18 @@ ${followupstat} === '29' ? 'In Progress' :
                             </OverflowToolbar>
                         </IconTabFilter>
 
-                        <IconTabSeparator icon="sap-icon://process" />
+                        <IconTabSeparator
+                            icon="sap-icon://process"
+                            visible="{= ${localModel>/Payload/EmpRTW} === 0 ? true : false}"
+                        />
 
                         <IconTabFilter
                             icon="sap-icon://detail-view"
                             iconColor="Negative"
                             key="fsf"
                             text="RTW"
+                            visible="{= ${localModel>/Payload/EmpRTW} === 0 ? true : false}"
+                            id="rtwid"
                         >
                             <Panel>
                                 <FlexBox alignItems="Center">
