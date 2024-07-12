@@ -350,6 +350,330 @@ sap.ui.define(
       },
 
       _onObjectMatched: function (oEvent) {
+        const model = new JSONModel({
+
+          Notes: {
+            addedby: "",
+            addedon: "",
+            IncNotes: "",
+            NotesType: -1,
+            NotesReview: -1,
+            INCI_ID: "",
+            INCI_INCID: ""
+
+          },
+
+
+          Payload: {
+            InvestigationBy: "",
+            DateInvest: "",
+            EmpRTW: -1,
+            InvStatDetails: "",
+          InvstStatus: "",
+            INCI_ID: "",
+            INCI_INCID: ""
+
+          },
+
+          CorrectAction:
+          {
+            AssignTo: "",
+            DueDate: "",
+            CAStatus: "",
+            Comments: ""
+          },
+          FollowUp:
+          {
+            followcrdate: "",
+            followupcrby: "",
+            folloupduedate: "",
+            followupstat: "",
+            followupcrfor: "",
+            followupnotes: "",
+            compdate: "",
+            followupflg: ""
+
+          },
+          Payload2: {
+
+            ReqAccom: -1,
+            isaccomgttendays: -1,
+            reasonforref: -1,
+            Other: "",
+            IssueHistory: "",
+            INCI_ID: "",
+            INCI_INCID: ""
+          },
+          Payload3: {
+
+            stdate: "",
+            Antienddate: "",
+            Union: "",
+            AccoPosDept: "",
+            date: "",
+            INCI_ID: "",
+            INCI_INCID: "",
+          },
+          Payload4: {
+
+            WCB: {},
+
+            "inj": [{
+              primaryinj: "",
+              bodypart: "",
+              side: "",
+            }],
+          },
+          "IncidentCategorys": [{
+            CatId: "1",
+            Cattext: "Injury/Illness"
+          },
+          {
+            CatId: "2",
+            Cattext: "Property /Equipment Damage"
+          },
+          {
+            CatId: "3",
+            Cattext: "Near Miss"
+          },
+          {
+            CatId: "4",
+            Cattext: "Dangerous Occurrence"
+          },
+          {
+            CatId: "5",
+            Cattext: "Environment"
+          },
+          {
+            CatId: "6",
+            Cattext: "Security"
+          }],
+          "IncidentTypes": [{
+            TypeId: "1",
+            IncText: "Non-Occupational"
+          },
+          {
+            TypeId: "2",
+            IncText: "No Treatment"
+          },
+          {
+            TypeId: "3",
+            IncText: "First Aid"
+          },
+          {
+            TypeId: "4",
+            IncText: "Medical Consultation"
+          },
+          {
+            TypeId: "5",
+            IncText: "Medical Aid"
+          },
+          {
+            TypeId: "6",
+            IncText: "Modified Work"
+          },
+          {
+            TypeId: "7",
+            IncText: "Lost time Incident"
+          },
+          {
+            TypeId: "8",
+            IncText: "Psychological"
+          },
+          {
+            TypeId: "9",
+            IncText: "Fatality"
+          }],
+          "TypeofEvents": [{
+            eventId: "1",
+            eventtext: "Corporate"
+          },
+          {
+            eventId: "2",
+            eventtext: "Private"
+          },
+          {
+            eventId: "3",
+            eventtext: "Charity"
+          }],
+          "IncSevirity": [{
+            SevId: "1",
+            Sevtext: "Critical"
+          },
+          {
+            SevId: "2",
+            Sevtext: "Major"
+          },
+          {
+            SevId: "3",
+            Sevtext: "Minor"
+          }],
+          "WCBInjuryCategory": [{
+            InjCatID: "1",
+            InjCatText: "Acute Injury"
+          },
+          {
+            InjCatID: "2",
+            InjCatText: "Chronic Injury"
+          }],
+          "WCBInjurySubCategory": [{
+            InjSubCatID: "1",
+            InjSubCatText: "Fractures"
+          },
+          {
+            InjSubCatID: "2",
+            InjSubCatText: "Sprains"
+          },
+          {
+            InjSubCatID: "3",
+            InjSubCatText: "Spinal Cord Injury"
+          },
+          {
+            InjSubCatID: "4",
+            InjSubCatText: "Dislocation"
+          }],
+          "WCBInjuryStatus": [{
+            InjStatID: "1",
+            InjStatText: "Active"
+          },
+          {
+            InjStatID: "2",
+            InjStatText: "Healing"
+          },
+          {
+            InjStatID: "3",
+            InjStatText: "Recovered"
+          },
+          {
+            InjStatID: "4",
+            InjStatText: "Recurrent"
+          }],
+          "WCBClaimStatus": [{
+            ClaimStatID: "1",
+            ClaimStatText: "Sbumitted"
+          },
+          {
+            ClaimStatID: "2",
+            ClaimStatText: "Under Review"
+          },
+          {
+            ClaimStatID: "3",
+            ClaimStatText: "Pending"
+          },
+          {
+            ClaimStatID: "4",
+            ClaimStatText: "Rejected"
+          }],
+          "InjureSide": [{
+            InjureSideID: "1",
+            InjureSideText: "Upper"
+          },
+          {
+            InjureSideID: "2",
+            InjureSideText: "Lower"
+          },
+          {
+            InjureSideID: "3",
+            InjureSideText: "Right"
+          },
+          {
+            InjureSideID: "4",
+            InjureSideText: "Left"
+          }],
+          "InjuryType": [{
+            InjuryTypeID: "1",
+            InjuryTypeText: "Primary"
+          },
+          {
+            InjuryTypeID: "2",
+            InjuryTypeText: "Secondary"
+          },
+          ],
+
+          EmpSupNames: [
+            {
+              name: "Stephan Lie",
+              id: "1001"
+            },
+            {
+              name: "Fay Van Damme",
+              id: "1002"
+            },
+            {
+              name: "Brevin Dice",
+              id: "1003"
+            },
+            {
+              name: "Regina Oleveria",
+              id: "1004"
+            },
+            {
+              name: "John Mathew",
+              id: "1005"
+            },
+            {
+              name: "Jim Parker",
+              id: "1006"
+            },
+            {
+              name: "Sophia Ran",
+              id: "1007"
+            },
+            {
+              name: "Wendi Blake",
+              id: "1008"
+            },
+            {
+              name: "Lois Lane",
+              id: "1009"
+            },
+            {
+              name: "Mary Magdalene",
+              id: "1010"
+            },
+            {
+              name: "Simon Cyrene",
+              id: "1011"
+            },
+          ],
+
+          Payload1: {
+            incident: {},
+            wasIncOnCosloc: -1,
+            noncosvehinvol: -1,
+            isinvestreq: -1,
+            shift: -1,
+            wascosvehused: -1,
+            isdraft: false,
+            maxDate: new Date(),
+            COSEmployee: {},
+
+
+            "COSEquipment": [{
+              EquipNo: ""
+
+            }],
+            "witness": [],
+            "addwellness": 1,
+            "isCOSEmp": -1,
+            "COSEmployee": [],
+            "Contractor": [],
+            "Member": [],
+            "child1": false,
+            "child2": false,
+            "child3": false,
+
+          },
+          "ButtonVisibility": "1",
+          "child5": false,
+          "child6": false,
+          "child7": false,
+        "isSeparatorVisible": true
+        });
+
+        this.getView().setModel(model, "localModel");
+
+
         var argument = oEvent.getParameters().arguments;
         var globalModel = this.getOwnerComponent().getModel("globalModel"),
           keys = argument;
@@ -372,7 +696,7 @@ sap.ui.define(
         $.ajax({
           url: url + "/Incident(" + "ID=" + keys.ID + ",INCID=" + keys.INCID + ")",
           success: function (response) {
-            debugger
+           // debugger
           }
         }),
           $.ajax({
@@ -1651,7 +1975,7 @@ sap.ui.define(
         contentType: "application/json",
         url: serviceurl + "WCB" + '?$filter=INCI_ID eq %27' + ID + '%27&$expand=inj',
         success: function (response) {
-          debugger;
+          //debugger;
           response.value[0].Notimeloss = parseInt(response.value[0].Notimeloss || -1);
           localModel.setProperty("/Payload4", response.value[0] === undefined ? { inj: [] } : response.value[0]);
 

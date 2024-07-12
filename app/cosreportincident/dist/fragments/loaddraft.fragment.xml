@@ -2,7 +2,6 @@
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core">
 	<TableSelectDialog
-		id="draftid"
 		noDataText="No data found"
 		title="Loaded drafts"
 		search=".handleSearch"
@@ -17,11 +16,12 @@
 		}">
 		<ColumnListItem vAlign="Middle" press="onSelectLoadDraft" visible = "{= ${ISDRAFT} === '0' ? false :true}">
 			<cells>
-				<Text text= "{IncNo}"/>
+				<!-- <Text text= "{IncNo}"/> -->
+
+				<Text text= "{Title}"/>
 
 				<Text text= "{createdAt}"/>
 
-				<Text text= "{Title}"/>
 
 				<Text text= "{createdBy}"/>
 
@@ -36,19 +36,19 @@
 			</cells>
 		</ColumnListItem>
 		<columns>
-			<Column>
+			<!-- <Column>
 				<header>
 					<Text text="Incident Number" />
+				</header>
+			</Column> -->
+			<Column>
+				<header>
+					<Text text="Title" />
 				</header>
 			</Column>
 			<Column>
 				<header>
 					<Text text="Date Saved" />
-				</header>
-			</Column>
-			<Column>
-				<header>
-					<Text text="Title" />
 				</header>
 			</Column>
 			<Column>

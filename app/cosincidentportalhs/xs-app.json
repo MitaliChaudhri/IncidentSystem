@@ -3,8 +3,8 @@
   "authenticationMethod": "route",
   "routes": [
     {
-      "source": "^/(.*)$",
-      "target": "/$1",
+      "source": "^/odata/(.*)$",
+      "target": "/odata/$1",
       "destination": "incident_1-srv-api",
       "authenticationType": "xsuaa",
       "csrfProtection": false

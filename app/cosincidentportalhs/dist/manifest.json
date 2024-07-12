@@ -17,7 +17,7 @@
         },
         "dataSources": {
             "mainService": {
-                "uri": "",
+                "uri": "odata/v4/health-safety/",
                 "type": "OData",
                 "settings": {
                     "annotations": [],

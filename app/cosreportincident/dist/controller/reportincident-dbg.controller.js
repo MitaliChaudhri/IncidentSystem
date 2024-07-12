@@ -435,7 +435,9 @@ sap.ui.define([
                                 MessageBox.information("Saved successfully.",{
                                     onClose : function(ok){
                                         if(ok === 'OK'){
-                                            //oModel.setData({});
+                                            
+                                            oModel.setData({});
+                                            defaultModel.refresh();
                                         }
                                     }, 
                                     actions : [sap.m.MessageBox.Action.OK, sap.m.MessageBox.Action.CANCEL],
@@ -467,7 +469,8 @@ sap.ui.define([
                                 MessageBox.information("Saved successfully.",{
                                     onClose : function(ok){
                                         if(ok === 'OK'){
-                                           // oModel.setData({});
+                                            oModel.setData({});
+                                            defaultModel.refresh();
                                         }
                                     }, 
                                     actions : [sap.m.MessageBox.Action.OK, sap.m.MessageBox.Action.CANCEL],

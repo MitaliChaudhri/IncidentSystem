@@ -10,7 +10,8 @@
     "@sap/cds-hana": "^2",
     "@sap/hdi-deploy": "^4.9.4",
     "@sap/xssec": "^3.6.1",
-    "express": "^4"
+    "express": "^4",
+    "nodemailer": "^6.9.14"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
