@@ -35,6 +35,15 @@
                         "parameters": {},
                         "additionalParameters": "allowed"
                     }
+                },
+                "cosincidentportalhs-Display": {
+                    "semanticObject": "cosincidentportalhs",
+                    "action": "Display",
+                    "title": "{{flpTitle}}",
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    }
                 }
             }
         }

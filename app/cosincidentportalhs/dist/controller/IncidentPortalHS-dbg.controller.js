@@ -1975,7 +1975,7 @@ sap.ui.define(
         contentType: "application/json",
         url: serviceurl + "WCB" + '?$filter=INCI_ID eq %27' + ID + '%27&$expand=inj',
         success: function (response) {
-          debugger;
+          //debugger;
           response.value[0].Notimeloss = parseInt(response.value[0].Notimeloss || -1);
           localModel.setProperty("/Payload4", response.value[0] === undefined ? { inj: [] } : response.value[0]);
 

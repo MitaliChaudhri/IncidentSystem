@@ -44,6 +44,15 @@
             "parameters": {},
             "additionalParameters": "allowed"
           }
+        },
+        "cosreportincident-Display": {
+          "semanticObject": "cosreportincident",
+          "action": "Display",
+          "title": "{{flpTitle}}",
+          "signature": {
+            "parameters": {},
+            "additionalParameters": "allowed"
+          }
         }
       }
     }
