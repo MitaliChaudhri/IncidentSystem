@@ -25,4 +25,8 @@ service Manager @(_requires: 'manager') {
 
     @readonly
     entity EmployeeDetails as projection on CV_EMPLOYEEDETAILS;
+
+    action   PostAttachment(content : array of Integer, name : String, mime : String, griveance_id : String,incid:Integer) returns String;
+    function PullAttachment(id : String)                                                                     returns String;
+    entity Attachment        as projection on my.Attachment;
 }

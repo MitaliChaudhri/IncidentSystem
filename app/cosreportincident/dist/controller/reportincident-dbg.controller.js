@@ -375,8 +375,8 @@ sap.ui.define([
                     incdesc         : incdesc,
                     isdraft         : isdraft,
                     worklocation    : worklocation,
-                    worklocation    : worklocation,
                     empemail        : empemail,
+                    // draftid         : oModel.getProperty('/draftid'),
                     CosEquip : COSEquipments.map((item) => {
                         item.EquipNo = parseInt(item.EquipNo, 10);
                         return item;
@@ -421,6 +421,7 @@ sap.ui.define([
                         url: serviceurl + 'Incident(ID='+payload.ID+',INCID='+payload.INCID+')',
                         data: JSON.stringify(payload),
                         success: function (response) {
+                            // oModel.setProperty('/draftid', response.draftid);
                             if(oEvent.oSource.mProperties.text === 'Submit'){
                                 MessageBox.success("Incident "+response.IncNo+" has been submitted successfully.",{
                                     onClose : function(ok){
@@ -432,7 +433,7 @@ sap.ui.define([
                                 emphasizedAction : MessageBox.Action.OK
                             });
                             }else{
-                                MessageBox.information("Saved successfully.",{
+                                MessageBox.information("Your draft has been saved successfully!",{
                                     onClose : function(ok){
                                         if(ok === 'OK'){
                                             
@@ -466,7 +467,7 @@ sap.ui.define([
                     	    emphasizedAction : MessageBox.Action.OK
                         });
                             }else{
-                                MessageBox.information("Saved successfully.",{
+                                MessageBox.information("Your draft has been saved successfully!",{
                                     onClose : function(ok){
                                         if(ok === 'OK'){
                                             oModel.setData({});

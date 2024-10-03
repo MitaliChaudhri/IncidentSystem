@@ -287,7 +287,7 @@
                                                 />
 
                                                 <Label
-                                                    text="Was Incident on a COS facility or location?"
+                                                    text="Was Incident on a company facility or location?"
                                                     labelFor="groupB"
                                                     required="true"
                                                 />
@@ -402,7 +402,7 @@
                                         >
                                             <f:content>
                                                 <Label
-                                                    text="Were you using a COS City Vehicle or Personal vehicle?"
+                                                    text="Were you using a company Vehicle or Personal vehicle?"
                                                     labelFor="groupB"
                                                     required="true"
                                                 />
@@ -414,7 +414,7 @@
                                                 >
                                                     <buttons>
                                                         <RadioButton
-                                                            text="COS Vehicle"
+                                                            text="Company Vehicle"
                                                         />
                                                         <RadioButton
                                                             text=" Personal Vehicle"
@@ -422,7 +422,7 @@
                                                     </buttons>
                                                 </RadioButtonGroup>
 
-                                                <Label text="COS Equipment #" />
+                                                <Label text="Company Equipment #" />
                                                 <VBox
                                                     items="{localModel>/Payload1/COSEquipment}"
                                                 >
@@ -461,7 +461,7 @@
                                                 />
 
                                                 <Label
-                                                    text="Were there non-COS vehicles involved?"
+                                                    text="Were there non-company vehicles involved?"
                                                 />
 
                                                 <RadioButtonGroup
@@ -702,7 +702,7 @@
                                                 </Select>
 
                                                 <Label
-                                                    text="Pyential Severity"
+                                                    text="Potential Severity"
                                                     required="true"
                                                 />
                                                 <Select
@@ -750,7 +750,7 @@
                                                 />
 
                                                 <CheckBox
-                                                    text="COS Employee"
+                                                    text="Company Employee"
                                                     selected="{localModel>/Payload1/child1}"
                                                 />
                                                 <CheckBox
@@ -772,7 +772,7 @@
                                             <headerToolbar>
                                                 <OverflowToolbar>
                                                     <m:Title
-                                                        text="COS Employee"
+                                                        text="Company Employee"
                                                     />
                                                     <ToolbarSpacer />
                                                     <Button
@@ -882,7 +882,7 @@
                                                     </Column>
                                                     <Column>
                                                         <Label
-                                                            text="COS Project Manager"
+                                                            text="Company Project Manager"
                                                         />
                                                     </Column>
 
@@ -973,14 +973,14 @@
                                                     <Column>
                                                         <Label
                                                             text="Were you assisted by
-                                             COS Employee ?"
+                                             company employee ?"
                                                             wrapping="true"
                                                             width="200px"
                                                         />
                                                     </Column>
                                                     <Column>
                                                         <Label
-                                                            text="COS Employee Name"
+                                                            text="Company Employee Name"
                                                         />
                                                     </Column>
                                                     <Column>
@@ -1117,10 +1117,12 @@
                                                 placeholder="Select Invetigation date"
                                                 valueFormat='yyyy-MM-dd'
                                                 value="{localModel>/Payload/DateInvest}"
+                                                 enabled="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                             />
                                             <Label text="Investigated By" />
                                             <Input
                                                 value="{localModel>/Payload/InvestigationBy}"
+                                                  enabled ="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                             />
                                             <Label
                                                 text="Employee Return to work?"
@@ -1130,6 +1132,7 @@
                                                 selectedIndex="{localModel>/Payload/EmpRTW}"
                                                 columns="2"
                                                 select="handleRadioButtonSelect"
+                                                 enabled ="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                             >
                                            
                                                     <RadioButton text="Yes" />
@@ -1172,6 +1175,7 @@
                                                 rows="4"
                                                 cols="70"
                                                 placeholder="Enter investigation details here"
+                                                 enabled="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                             />
                                         </f:content>
                                     </f:SimpleForm>
@@ -1182,6 +1186,7 @@
                                             text="Submit"
                                             press="onSubmitInvestigation"
                                             id="savebutton"
+                                              enabled="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                         />
                                     </OverflowToolbar>
                                 </VBox>
@@ -1213,6 +1218,7 @@
                                         width="230px"
                                         press=".onDefaultDialogPress"
                                         ariaHasPopup="Dialog"
+                                         enabled="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                     />
                                 </Toolbar>
 
@@ -1349,6 +1355,7 @@ ${CAStatus} === '26' ? 'Closed' :
                                                     icon="sap-icon://delete"
                                                     type="Neutral"
                                                     press="onDeleteCA"
+                                                     visible="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                                 >
                                                     <layoutData>
                                                         <FlexItemData
@@ -1361,6 +1368,7 @@ ${CAStatus} === '26' ? 'Closed' :
                                                     icon="sap-icon://edit"
                                                     type="Neutral"
                                                     press="onDefaultDialogPressCA"
+                                                    visible="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                                 />
                                             </HBox>
                                         </cells>
@@ -1389,6 +1397,7 @@ ${CAStatus} === '26' ? 'Closed' :
                                     <Button
                                         text="Add New"
                                         press="onNotesDialogPress"
+                                         enabled="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                     />
                                 </Toolbar>
 
@@ -1466,6 +1475,7 @@ ${CAStatus} === '26' ? 'Closed' :
                                                 icon="sap-icon://delete"
                                                 type="Neutral"
                                                 press="onDeleteNotes"
+                                                 visible="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                             >
                                                 <layoutData>
                                                     <FlexItemData
@@ -1478,6 +1488,7 @@ ${CAStatus} === '26' ? 'Closed' :
                                                 icon="sap-icon://edit"
                                                 type="Neutral"
                                                 press="onEditNotes"
+                                                visible="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                             />
                                         </HBox>
                                     </ColumnListItem>
@@ -1612,6 +1623,7 @@ ${followupstat} === '29' ? 'In Progress' :
                                         text="Create Follow Up"
                                         press="onFollowUpDialogPress"
                                         id="1"
+                                         enabled="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                     />
                                     <!-- <Button
                                         type="Attention"
@@ -1661,7 +1673,7 @@ ${followupstat} === '29' ? 'In Progress' :
                                     <VBox>
                                         <HBox>
                                             <Label
-                                                text="1. Has the Employee provided fully completed functional abilities Report to support the request for accomodation?"
+                                                text="1. Has the employee submitted a fully completed functional abilities report to support the accommodation request?"
                                                 class="sapUiTinyMargin"
                                             />
                                             <RadioButtonGroup
@@ -1906,6 +1918,7 @@ ${followupstat} === '29' ? 'In Progress' :
                                             placeholder="Select Start date"
                                             valueFormat='yyyy-MM-dd'
                                             value="{localModel>/Payload3/stdate}"
+                                            enabled ="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                         />
                                         <Button
                                             icon="sap-icon://sys-help-2"
@@ -1919,6 +1932,7 @@ ${followupstat} === '29' ? 'In Progress' :
                                             placeholder="Select Anticipated date"
                                             valueFormat='yyyy-MM-dd'
                                             value="{localModel>/Payload3/Antienddate}"
+                                            enabled ="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                         />
                                         <Button
                                             icon="sap-icon://sys-help-2"
@@ -1951,6 +1965,7 @@ ${followupstat} === '29' ? 'In Progress' :
                                             placeholder="Select  date"
                                             valueFormat='yyyy-MM-dd'
                                             value="{localModel>/Payload3/date}"
+                                            enabled ="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                         />
                                         <Button
                                             icon="sap-icon://sys-help-2"
@@ -1972,6 +1987,7 @@ ${followupstat} === '29' ? 'In Progress' :
                                         text="Finalize Return to work"
                                         press="onSubmitRTW"
                                         id="finalize"
+                                        enabled ="{= ${globalModel>/sIncidentStat} === '26' ? false : true}"
                                     />
                                 </OverflowToolbar>
                             </Panel>
@@ -2234,6 +2250,45 @@ ${followupstat} === '29' ? 'In Progress' :
                                 </OverflowToolbar>
                             </Panel>
                         </IconTabFilter>
+
+ <IconTabSeparator icon="sap-icon://process" />
+
+                        <IconTabFilter
+                            icon="sap-icon://attachment"
+                            iconColor="NonInteractive"
+                            key="attachkey"
+                            text="Attachment"
+                            
+                        >
+                        <List items="{globalModel>/attachment}">
+                            <CustomListItem>
+                                <FlexBox alignItems="Center" justifyContent="SpaceBetween">
+                                    <Label text="{globalModel>name}" />
+                                    <Button press="onDownloadAttachment" type="Transparent"
+                                        icon="sap-icon://download-from-cloud"
+                                        text="Download" />
+                                </FlexBox>
+                            </CustomListItem>
+                        </List>
+                        	
+			<!-- <FlexBox
+				height="100px"
+				alignItems="Start"
+				justifyContent="End">
+				<Button text="Upload File" type="Emphasized" class="sapUiSmallMarginEnd" press="onPressUpload"/>
+			
+			</FlexBox> -->
+		
+                          
+                         <upload:UploadSet
+id
+="idUploadSet"  uploadButtonInvisible="false" uploadCompleted="onPressUpload"/>
+
+
+                        </IconTabFilter>
+
+
+
                     </items>
                 </IconTabBar>
             </VBox>

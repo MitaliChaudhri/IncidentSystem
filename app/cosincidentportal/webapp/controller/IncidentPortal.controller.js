@@ -336,7 +336,7 @@ sap.ui.define(
           "child5": false,
           "child6": false,
           "child7": false,
-        "isSeparatorVisible": true
+          "isSeparatorVisible": true
         });
 
         this.getView().setModel(model, "localModel");
@@ -668,7 +668,7 @@ sap.ui.define(
           "child5": false,
           "child6": false,
           "child7": false,
-        "isSeparatorVisible": true
+          "isSeparatorVisible": true
         });
 
         this.getView().setModel(model, "localModel");
@@ -684,14 +684,14 @@ sap.ui.define(
         var oIconTab = this.getView().byId("icontabbar1");
         oIconTab.setSelectedKey("icon1");
         const localModel = this.getView().getModel("localModel");
-      localModel.setProperty("/isSeparatorVisible", false);
+        localModel.setProperty("/isSeparatorVisible", false);
         const defaultModel = this.getView().getModel();
         const serviceurl = defaultModel.getServiceUrl();
 
         this.getView().byId("correctiveActionTable").getBinding("items").filter([new sap.ui.model.Filter("INCI_ID", "EQ", ID)])
         this.getView().byId("NotesTable").getBinding("items").filter([new sap.ui.model.Filter("INCI_ID", "EQ", ID)])
         this.getView().byId("FL1").getBinding("items").filter([new sap.ui.model.Filter("INCI_ID", "EQ", ID)])
-      var that = this;
+        var that = this;
         $.ajax({
           url: url + "/Incident(" + "ID=" + keys.ID + ",INCID=" + keys.INCID + ")",
           success: function (response) {
@@ -738,47 +738,47 @@ sap.ui.define(
             // url: serviceurl + "Investigation" +'?$filter=INCI_ID eq ' +'+ID+' ,
             url: serviceurl + "Investigation" + '?$filter=INCI_ID eq %27' + ID + '%27',
             success: function (response) {
-            if (response.value.length > 0) {
-             // debugger;
-              response.value[0].EmpRTW = parseInt(response.value[0].EmpRTW|| -1, 10);
-              // response.EmpRTW = parseInt(response.EmpRTW, 10) || -1;
-              // localModel.setProperty("/isSeparatorVisible", response.value[0].EmpRTW === 0);
+              if (response.value.length > 0) {
+                // debugger;
+                response.value[0].EmpRTW = parseInt(response.value[0].EmpRTW || -1, 10);
+                // response.EmpRTW = parseInt(response.EmpRTW, 10) || -1;
+                // localModel.setProperty("/isSeparatorVisible", response.value[0].EmpRTW === 0);
 
-              localModel.setProperty("/Payload", response.value[0]);
+                localModel.setProperty("/Payload", response.value[0]);
 
 
-              defaultModel.refresh();
+                defaultModel.refresh();
 
-            } else {
-              localModel.setProperty("/Payload", {
-                EmpRTW:-1
-              });
-            }
-          },
-          error: function () { },
-        })
+              } else {
+                localModel.setProperty("/Payload", {
+                  EmpRTW: -1
+                });
+              }
+            },
+            error: function () { },
+          })
 
-     // debugger;
-          $.ajax({
-            type: "GET",
-            contentType: "application/json",
-            // url: serviceurl + "Investigation" ,
-            // url: serviceurl + "Investigation" +'?$filter=INCI_ID eq ' +'+ID+' ,
-            url: serviceurl + "EHSRef" + '?$filter=INCI_ID eq %27' + ID + '%27',
-            success: function (response) {
-              console.log("Success:", response);
-          if (response.value.length) {
+        // debugger;
+        $.ajax({
+          type: "GET",
+          contentType: "application/json",
+          // url: serviceurl + "Investigation" ,
+          // url: serviceurl + "Investigation" +'?$filter=INCI_ID eq ' +'+ID+' ,
+          url: serviceurl + "EHSRef" + '?$filter=INCI_ID eq %27' + ID + '%27',
+          success: function (response) {
+            console.log("Success:", response);
+            if (response.value.length) {
               response.value[0].isaccomgttendays = parseInt(response.value[0].isaccomgttendays || -1);
               response.value[0].ReqAccom = parseInt(response.value[0].ReqAccom || -1);
               response.value[0].reasonforref = parseInt(response.value[0].reasonforref || -1);
 
               localModel.setProperty("/Payload2", response.value[0]);
-          }
+            }
 
-              // debugger;
-            },
-            error: function () { },
-          }),
+            // debugger;
+          },
+          error: function () { },
+        }),
 
           $.ajax({
 
@@ -805,14 +805,14 @@ sap.ui.define(
             // url: serviceurl + "WCB?$filter=INCI_ID eq '"+ ID +"'&$expand=inj",
             url: serviceurl + "WCB" + '?$filter=INCI_ID eq %27' + ID + '%27&$expand=inj',
             success: function (response) {
-            if (response.value.length) {
-              response.value[0].Notimeloss = parseInt(response.value[0].Notimeloss || -1);
-              localModel.setProperty("/Payload4", response.value[0] === undefined ? { inj: [] } : response.value[0]);
+              if (response.value.length) {
+                response.value[0].Notimeloss = parseInt(response.value[0].Notimeloss || -1);
+                localModel.setProperty("/Payload4", response.value[0] === undefined ? { inj: [] } : response.value[0]);
 
-            }else {
-              localModel.setProperty("/Payload4", { Notimeloss:-1,inj: []});
+              } else {
+                localModel.setProperty("/Payload4", { Notimeloss: -1, inj: [] });
+              }
             }
-          }
           })
       },
 
@@ -831,7 +831,7 @@ sap.ui.define(
         const IncNo = localModel.getProperty("/Payload1/IncNo");
         const Title = localModel.getProperty("/Payload1/Title");
         const empname = localModel.getProperty("/Payload1/empname");
-        const empemail= localModel.getProperty("/Payload1/empemail");
+        const empemail = localModel.getProperty("/Payload1/empemail");
         const empid = localModel.getProperty("/Payload1/empid");
         const emppos = localModel.getProperty("/Payload1/emppos");
         const division = localModel.getProperty("/Payload1/division");
@@ -866,7 +866,7 @@ sap.ui.define(
         otherpeopinv += localModel.getProperty("/Payload1/child3") === true ? '1' : '0';
         const incdesc = localModel.getProperty("/Payload1/incdesc");
         const isdraft = localModel.getProperty("/Payload1/isdraft");
-      const incStatus = localModel.getProperty("/Payload1/incStatus");
+        const incStatus = localModel.getProperty("/Payload1/incStatus");
 
 
         const COSEquipments = localModel.getProperty("/Payload1/COSEquipment");
@@ -888,11 +888,11 @@ sap.ui.define(
 
         const payload = {
           INCID: localModel.getProperty('/Payload1/INCID'),
-        incStatus: incStatus,
+          incStatus: incStatus,
           IncNo: IncNo,
           Title: Title,
           empname: empname,
-          empemail:empemail,
+          empemail: empemail,
           empid: empid,
           emppos: emppos,
           division: division,
@@ -933,7 +933,7 @@ sap.ui.define(
           public: Member
         };
 
-      
+
 
         payload.ID = localModel.getProperty('/Payload1/ID');
 
@@ -1097,7 +1097,7 @@ sap.ui.define(
         payload.EmpRTW = payload.EmpRTW.toString();
         payload.INCI_INCID = INCID;
         payload.INCI_ID = ID;
-      payload.InvstStatus = "30";
+        payload.InvstStatus = "30";
 
 
         if (payload.ID !== undefined && payload.ID !== null && payload.ID !== "") {
@@ -1124,29 +1124,29 @@ sap.ui.define(
             url: serviceurl + "Investigation",
             data: JSON.stringify(payload),
             success: function (response, second) {
-           //   response.EmpRTW = parseInt(response.EmpRTW, 10) || -1;
-            response.EmpRTW = parseInt(response.EmpRTW || -1);
+              //   response.EmpRTW = parseInt(response.EmpRTW, 10) || -1;
+              response.EmpRTW = parseInt(response.EmpRTW || -1);
               localModel.setProperty("/Payload", response);
               MessageBox.information("Investigation created for Incident  " + IncNo);
               defaultModel.refresh();
             },
             error: function () { },
           })
-        $.ajax({
-          type: "PATCH",
-          contentType: "application/json",
-          url: serviceurl + 'Incident(ID=' + ID + ',INCID=' + INCID + ')',
-          data: JSON.stringify({
-            incStatus: "24"
-          }),
-          success: function (response, second) {
+          $.ajax({
+            type: "PATCH",
+            contentType: "application/json",
+            url: serviceurl + 'Incident(ID=' + ID + ',INCID=' + INCID + ')',
+            data: JSON.stringify({
+              incStatus: "24"
+            }),
+            success: function (response, second) {
 
 
 
-            defaultModel.refresh();
-          },
-          error: function () { },
-        });
+              defaultModel.refresh();
+            },
+            error: function () { },
+          });
         };
       },
       //Add New Fragment
@@ -1842,7 +1842,7 @@ sap.ui.define(
             success: function (response) {
 
               MessageBox.success("WCB form for Incident " + IncNo + "  Updated  Successfully.");
-            defaultModel.refresh();
+              defaultModel.refresh();
 
             },
           });
@@ -1860,8 +1860,8 @@ sap.ui.define(
             data: JSON.stringify(payload),
             success: function (response) {
 
-            MessageBox.success("WCB form for Incident " + IncNo + "  Submitted  Successfully and send to H&S Team for Review.");
-            defaultModel.refresh();
+              MessageBox.success("WCB form for Incident " + IncNo + "  Submitted  Successfully and send to H&S Team for Review.");
+              defaultModel.refresh();
 
             },
           });
@@ -1874,6 +1874,103 @@ sap.ui.define(
 
         inj.push({});
         localModel.setProperty("/Payload4/inj", inj);
+      },
+
+
+      onPressUpload: async function () {
+        const idUploadSet = this.getView().byId("idUploadSet"),
+          aItems = idUploadSet.getItems(),
+          serviceUrl = this.getOwnerComponent().getModel().getServiceUrl(),
+          globalModel = this.getOwnerComponent().getModel("globalModel"),
+          griveance_id_ID = this.getOwnerComponent().getModel("globalModel").oData.keys.ID,
+          ID = this.getOwnerComponent().getModel("globalModel").oData.keys.INCID;
+
+        this.getView().setBusy(true);
+        try {
+          for (let i = 0; i < aItems.length; i++) {
+            const file = aItems[i],
+              object = file.getFileObject(),
+              content = await this._FileToArrayBuffer(object),
+              name = file.getFileName();
+
+            await $.ajax({
+              type: "POST",
+              contentType: "application/json; charset=utf-8",
+              url: `${serviceUrl}PostAttachment`,
+              data: JSON.stringify({
+                name, content,
+                incid: parseInt(ID),
+                griveance_id: griveance_id_ID,
+                mime: object.type
+              })
+            })
+            this.getView().setBusy(false);
+            sap.m.MessageBox.success("File uploaded successfully");
+            idUploadSet.removeAllItems();
+
+            $.ajax({
+              type: "GET",
+              url: `${serviceUrl}Incident(ID=${griveance_id_ID},INCID=${ID})?$expand=attachment`,
+              success: function (data) {
+                globalModel.setProperty("/attachment", data.attachment);
+
+              }
+            });
+          }
+        } catch (error) {
+          this.getView().setBusy(false);
+          console.error(error)
+        }
+      },
+
+      _FileToArrayBuffer: function (file) {
+        return new Promise((resolve, reject) => {
+          // eslint-disable-next-line no-undef
+          const reader = new FileReader();
+          reader.readAsArrayBuffer(file);
+          reader.onload = () => resolve(Array.from(new Uint8Array(reader.result)));
+          reader.onerror = error => reject(error);
+        });
+      },
+
+      onDownloadAttachment: function (oEvent) {
+        const serviceUrl = this.getOwnerComponent().getModel().getServiceUrl(),
+          object = oEvent.getSource().getBindingContext("globalModel").getObject(),
+          { objectId, mime, name } = object;
+
+        $.ajax({
+          type: "GET",
+          url: `${serviceUrl}PullAttachment(id='${objectId}')`,
+          success: function ({ value }) {
+            const anchor = document.createElement("a");
+            anchor.download = name;
+            anchor.href = "data:" + mime + ";base64," + value;
+            anchor.click();
+            anchor.remove();
+          }
+        });
+      },
+
+      OnselectIconTab: function (oEvent) {
+        if (oEvent.getSource().getSelectedKey() == "attachkey") {
+          const serviceUrl = this.getOwnerComponent().getModel().getServiceUrl(),
+          globalModel = this.getOwnerComponent().getModel("globalModel"),
+          griveance_id_ID = this.getOwnerComponent().getModel("globalModel").oData.keys.ID,
+          ID = this.getOwnerComponent().getModel("globalModel").oData.keys.INCID;
+          $.ajax({
+            type: "GET",
+            url: `${serviceUrl}Incident(ID=${griveance_id_ID},INCID=${ID})?$expand=attachment`,
+            success: function (oData) {
+              globalModel.setProperty("/attachment", oData.attachment);
+          }.bind(this),
+          error: function (oError) {
+            
+          }
+
+          
+          });
+        }
+
       },
 
       onDeleteInjury: function (oEvent) {

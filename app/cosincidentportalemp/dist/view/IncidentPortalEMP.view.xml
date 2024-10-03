@@ -286,7 +286,7 @@
                                                 />
 
                                                 <Label
-                                                    text="Was Incident on a COS facility or location?"
+                                                    text="Was Incident on a company facility or location?"
                                                     labelFor="groupB"
                                                     required="true"
                                                     
@@ -404,7 +404,7 @@
                                         >
                                             <f:content>
                                                 <Label
-                                                    text="Were you using a COS City Vehicle or Personal vehicle?"
+                                                    text="Were you using a company vehicle or personal vehicle?"
                                                     labelFor="groupB"
                                                     required="true"
                                                 />
@@ -417,7 +417,7 @@
                                                 >
                                                     <buttons>
                                                         <RadioButton
-                                                            text="COS Vehicle"
+                                                            text="Company Vehicle"
                                                         />
                                                         <RadioButton
                                                             text=" Personal Vehicle"
@@ -425,7 +425,7 @@
                                                     </buttons>
                                                 </RadioButtonGroup>
 
-                                                <Label text="COS Equipment #" />
+                                                <Label text="Company Equipment #" />
                                                 <VBox
                                                     items="{localModel>/Payload1/COSEquipment}"
                                                      
@@ -469,7 +469,7 @@
                                                 />
 
                                                 <Label
-                                                    text="Were there non-COS vehicles involved?"
+                                                    text="Were there company vehicles involved?"
                                                 />
 
                                                 <RadioButtonGroup
@@ -723,7 +723,7 @@
                                                 </Select>
 
                                                 <Label
-                                                    text="Pyential Severity"
+                                                    text="Potential Severity"
                                                     required="true"
                                                 />
                                                 <Select
@@ -774,7 +774,7 @@
 
                                                 <CheckBox
                                                  editable="false"
-                                                    text="COS Employee"
+                                                    text="Company Employee"
                                                     selected="{localModel>/Payload1/child1}"
                                                 />
                                                 <CheckBox
@@ -798,7 +798,7 @@
                                             <headerToolbar>
                                                 <OverflowToolbar>
                                                     <m:Title
-                                                        text="COS Employee"
+                                                        text="Company Employee"
                                                     />
                                                     <ToolbarSpacer />
                                                     <Button
@@ -916,7 +916,7 @@
                                                     </Column>
                                                     <Column>
                                                         <Label
-                                                            text="COS Project Manager"
+                                                            text="Company Project Manager"
                                                         />
                                                     </Column>
 
@@ -1014,14 +1014,14 @@
                                                     <Column>
                                                         <Label
                                                             text="Were you assisted by
-                                             COS Employee ?"
+                                             company employee ?"
                                                             wrapping="true"
                                                             width="200px"
                                                         />
                                                     </Column>
                                                     <Column>
                                                         <Label
-                                                            text="COS Employee Name"
+                                                            text="Company Employee Name"
                                                         />
                                                     </Column>
                                                     <Column>
@@ -1685,7 +1685,7 @@ ${followupstat} === '29' ? 'In Progress' :
                                     <VBox>
                                         <HBox>
                                             <Label
-                                                text="1. Has the Employee provided fully completed functional abilities Report to support the request for accomodation?"
+                                                text="1. Has the employee submitted a fully completed functional abilities report to support the accommodation request?"
                                                 class="sapUiTinyMargin"
                                             />
                                             <RadioButtonGroup

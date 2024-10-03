@@ -190,7 +190,7 @@
                                                     />
             
                                                     <Label
-                                                        text="Was Incident on a COS facility or location?"
+                                                        text="Was Incident on a company facility or location?"
                                                         labelFor="groupB"
                                                     
                                                     />
@@ -269,7 +269,7 @@
                         >
                             <f:content>
                                 <Label
-                                                        text="Were you using a COS City Vehicle or Personal vehicle?"
+                                                        text="Were you using a company vehicle or personal vehicle?"
                                                         labelFor="groupB"
                                                         
                                                     />
@@ -281,7 +281,7 @@
                                                     >
                                                     <buttons>
                                                             <RadioButton
-                                                                text="COS Vehicle"
+                                                                text="Company Vehicle"
                                                             />
                                                             <RadioButton
                                                                 text=" Personal Vehicle"
@@ -290,7 +290,7 @@
                                                     </RadioButtonGroup>
 
                     
-                                <Label text="COS Equipment #"/>
+                                <Label text="Company Equipment #"/>
                                 <VBox items="{oModel>/COSEquipment}">
                                 <CustomListItem>
                                 <HBox>
@@ -319,7 +319,7 @@
                                 <Label text = "Bus # (if transit incident)"/>
                                 <Input value = "{oModel>/busno}" change="onInputChange"/>
 
-                                <Label text = "Were there non-COS vehicles involved?"/>
+                                <Label text = "Were there non-company vehicles involved?"/>
 
                                 <RadioButtonGroup
                                                         id="radioGroupid1"
@@ -575,7 +575,7 @@
                             <m:FlexBox alignItems="Center">
                             <Label text = "Other Involved People" design="Bold"/>
                 
-                            <CheckBox text="COS Employee" selected="{oModel>/child1}"/>
+                            <CheckBox text="Company employee" selected="{oModel>/child1}"/>
 				            <CheckBox text="Contractor" selected="{oModel>/child2}"/>
                             <CheckBox text="Member of the Public" selected="{oModel>/child3}"/>
                             </m:FlexBox>
@@ -585,7 +585,7 @@
                             <headerToolbar>
                                 <OverflowToolbar>
                                     <m:Title
-                                        text="COS Employee"
+                                        text="Company employee"
                                     />
                                     <ToolbarSpacer />
                                     <Button
@@ -695,7 +695,7 @@
                                 </Column>
                                 <Column>
                                     <Label
-                                        text="COS Project Manager"
+                                        text="Company Project Manager"
                                     />
                                 </Column>
                         
@@ -784,14 +784,14 @@
                                 <Column>
                                     <Label
                                         text="Were you assisted by
-                                             COS Employee ?"
+                                             Company employee ?"
                                         wrapping="true"
                                         width="200px"
                                     />
                                 </Column>
                                 <Column>
                                     <Label
-                                        text="COS Employee Name"
+                                        text="Company Employee Name"
                                     />
                                 </Column>
                                 <Column>

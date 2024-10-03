@@ -88,9 +88,14 @@ sap.ui.define(
           globalModel.setProperty("/keys", {
             ID: object.ID,
             INCID: object.INCID
-          })
+          });
+          globalModel.setProperty("/sIncidentStat", oEvent.getSource().getBindingContext().getObject().incStatus);
           //oEvent.getParameters().selectedItem.getBindingContext().getObject()
         },
+
+
+
+
         formatIncidentType: function (value) {
   
           if (!value) return "";

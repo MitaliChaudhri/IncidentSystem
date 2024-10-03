@@ -18,6 +18,7 @@
 			<cells>
 				<!-- <Text text= "{IncNo}"/> -->
 
+	<Text text= "{draftid}"/>
 				<Text text= "{Title}"/>
 
 				<Text text= "{createdAt}"/>
@@ -41,6 +42,12 @@
 					<Text text="Incident Number" />
 				</header>
 			</Column> -->
+
+			<Column>
+				<header>
+					<Text text="Draft ID" />
+				</header>
+			</Column>
 			<Column>
 				<header>
 					<Text text="Title" />
