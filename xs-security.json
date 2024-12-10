@@ -6,6 +6,11 @@
     {
       "name": "uaa.user",
       "description": "UAA"
+    },
+    {
+      "name":"$XSAPPNAME.jobscheduler",
+      "description":"jobscheduler scope",
+      "grant-as-authority-to-apps":["$XSSERVICENAME(jobScheduling)"]
     }
   ],
   "role-templates": [

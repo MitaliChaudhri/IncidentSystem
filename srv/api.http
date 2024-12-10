@@ -1,0 +1,22 @@
+POST http://localhost:4004/odata/v4/employeemasterdata/EMPINFO
+Content-Type: application/xml
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<EMPINFO>
+<empid>IDPL01</empid>
+<createdAt>2024-12-04T11:19:24.246Z</createdAt>
+<createdBy>system</createdBy>
+<modifiedAt>2024-12-04T11:19:24.246Z</modifiedAt>
+<modifiedBy>system</modifiedBy>
+<empname>Sagar  Patil</empname>
+<emppos>Director</emppos>
+<division>SAP</division>
+<dept>Delivery</dept>
+<section>Fiori/HANA</section>
+<worklocation>Pune</worklocation>
+<supid>IDPL02</supid>
+<supname>Tushar Ladhe</supname>
+<empemail>sagar@initiumdigital.com</empemail>
+<mgremail>tushar.ladhe@initiumdigital.com</mgremail>
+</EMPINFO>
+

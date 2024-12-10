@@ -9,6 +9,7 @@ modules:
   requires:
   - name: incident_1-db
   - name: uaa_incident_1
+  - name: incident_1-destination-service
   provides:
   - name: srv-api
     properties:

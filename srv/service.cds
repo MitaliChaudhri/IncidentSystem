@@ -16,3 +16,13 @@ service ReportIncident @(path: '/browse') {
    entity EmpInfo as projection on my.EMPINFO where empemail = $user;
 
 }
+
+service employeemasterdata @(impl: './loadempdata.js') {
+
+    entity EMPINFO as projection on my.EMPINFO;
+
+    action loadmasterdata() returns String;
+
+    action loademployeemasterdata( arrayofdata: array of EMPINFO ) returns String;
+
+};

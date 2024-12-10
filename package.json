@@ -6,13 +6,15 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/core": "^1.54.2",
+    "@sap-cloud-sdk/http-client": "^3.24.0",
     "@sap/cds": "^7",
     "@sap/cds-hana": "^2",
     "@sap/hdi-deploy": "^4.9.4",
     "@sap/xssec": "^3.6.1",
     "axios": "^1.7.7",
     "express": "^4",
-    "nodemailer": "^6.9.15"
+    "nodemailer": "^6.9.16"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
